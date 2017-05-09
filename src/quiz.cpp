@@ -11,7 +11,6 @@ Quiz::~Quiz(){
 
 }
 
-
 std::string Quiz::getname() const{
 	return name;
 }
@@ -19,6 +18,7 @@ std::string Quiz::getname() const{
 std::string Quiz::setname(std::string newname){
 	return name = newname;
 }
+
 void Quiz::run(int user_id) const{
 	std::vector<int> id = randompermutation(questions.size());
 
@@ -34,9 +34,9 @@ void Quiz::run(int user_id) const{
 
 		questao.show();
 
-		// menu: 1 = resposnder; 0 = pular; -1 = sair
+		// menu: 1 = responder; 0 = pular; -1 = sair
 
-		int op = readIntInRange(-1, questions.size());
+		int op = readIntInRange(-1, 1);
 		if(op == 0) q.push(questao);
 		else if(op == -1){
 			// msg: voce escolheu sair do quiz

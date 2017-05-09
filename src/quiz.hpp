@@ -8,7 +8,6 @@
 class Quiz{
 	std::string name;
 	std::vector<Question> questions;
-	std::vector<int> answers;
 
 public:
 	Quiz();

@@ -24,7 +24,7 @@ void Quiz::run(int user_id) const{
 
 	std::queue<Question> q;
 
-	for(int i = 0; i < questions.size(); i++)
+	for(uint i = 0; i < questions.size(); i++)
 		q.push(questions[ id[i] ]);
 
 	int qnt_resp_certas = 0;

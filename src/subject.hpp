@@ -1,9 +1,10 @@
 #ifndef SUBJECTHPP
 #define SUBJECTHPP
 
-#include "topic.hpp"
 #include <string>
 #include <vector>
+#include "topic.hpp"
+#include "quiz.hpp"
 
 class Subject {
     std::string name;
@@ -13,7 +14,7 @@ public:
     std::string getName();
     void setName(std::string new_name);
     void showTopics(int user_id);
-    Subject();
+    Subject(const std::string &);
     ~Subject();
 };
 

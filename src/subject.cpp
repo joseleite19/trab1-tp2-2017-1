@@ -1,9 +1,11 @@
 #include "subject.hpp"
 #include <queue>
+#include <string>
 #include "helper.hpp"
+#include "topic.hpp"
 
-Subject::Subject() {
-
+Subject::Subject(const std::string & name) {
+    this->name = name;
 }
 
 Subject::~Subject() {
@@ -22,7 +24,7 @@ void Subject::showTopics(int user_id) {
     std::vector<int> id = randompermutation(topics.size());
 	std::queue<Topic> t;
 
-	for(int i = 0; i < topics.size(); i++)
+	for(uint i = 0; i < topics.size(); i++)
 		t.push(topics[ id[i] ]);
     while(!t.empty()){
 		Topic topic = t.front(); t.pop();

@@ -7,8 +7,10 @@
     #define CLEAR "clear"
 #endif
 
+#include <queue>
 #include "user.hpp"
 #include "stubPR.hpp"
+#include "subject.hpp"
 
 class InterfaceBLAuth;
 class InterfaceBLUser;
@@ -35,6 +37,11 @@ class InterfaceUIUser {
 public:
     virtual void manageUserData (User*) = 0;
     virtual void manageUserSubjects (User*) = 0;
+    virtual void changeName(User *) = 0;
+    virtual void changePass(User *) = 0;
+    virtual void showSubjects(User *) = 0;
+    virtual void includeSubject(User *) = 0;
+    virtual void removeSubject(User *) = 0;
     virtual void setDownstreamController(InterfaceBLUser *) = 0;
     virtual ~InterfaceUIUser(void) {}
 };
@@ -42,11 +49,11 @@ public:
 /// Interface do Módulo BL de Usuário
 class InterfaceBLUser {
 public:
-    virtual void changeName(User *) = 0;
-    virtual void changePass(User *) = 0;
-    virtual void showSubjects(User *) = 0;
-    virtual void includeSubject(User *) = 0;
-    virtual void removeSubject(User *) = 0;
+    virtual bool changeName(User *, const string &) = 0;
+    virtual bool changePass(User *, const string &, const string &) = 0;
+    virtual std::queue<Subject> getSubjectsBank(void) = 0;
+    virtual void includeSubject(User *, const string &) = 0;
+    virtual void removeSubject(User *, const string &) = 0;
     virtual void setDownstreamController(StubPR *) = 0;
     virtual ~InterfaceBLUser(void) {}
 };

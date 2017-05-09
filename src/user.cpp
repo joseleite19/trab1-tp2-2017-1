@@ -3,25 +3,27 @@
 User::User(const string& name, const string& login, const string& pass,
 	 const bool& admin) : name(name), login(login), password(pass), admin(admin){}
 
-User::~User(){
+User::~User() { }
 	
+string User::get_name() const{
+	return this->name;
 }
 
-string User::getname() const{
-	return name;
+string User :: get_login() const{
+    return this->login;
 }
 
 bool User::try_login(const string& plogin, const string& ppassword) const{
-	return plogin == login && ppassword == password;
+	return plogin == this->login && ppassword == this->password;
 }
 
-inline bool User::is_admin() const{
-	return admin;
+bool User::is_admin() {
+	return this->admin;
 }
 
 bool User::change_password(const string& oldpass, const string& newpass){
-	if(oldpass == password){
-		password = newpass;
+	if(oldpass == this->password){
+		this->password = newpass;
 		return true;
 	}
 	return false;

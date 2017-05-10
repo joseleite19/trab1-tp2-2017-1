@@ -105,8 +105,9 @@ std::queue<User> StubPR::getUserBank() {
 
 void StubPR::deleteUser(User * user) {
     std::queue<User> aux;
+    std::string login = user->getLogin(); 
     while(!this->dummy_user_bank.empty()) {
-        if(this->dummy_user_bank.front().getLogin() != user->getLogin()) {
+        if(this->dummy_user_bank.front().getLogin() != login) {
             aux.push(this->dummy_user_bank.front());
         }
         this->dummy_user_bank.pop();

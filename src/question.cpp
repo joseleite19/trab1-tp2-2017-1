@@ -7,7 +7,7 @@ Question::~Question(){
 }
 
 void Question::show() const{
-	//printa text
+	printf("%s\n", this->text.c_str());
 }
 
 char Question::getresp() const{

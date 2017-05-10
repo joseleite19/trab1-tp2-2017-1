@@ -3,8 +3,8 @@
 #include <queue>
 #include "helper.hpp"
 
-Quiz::Quiz(){
-
+Quiz::Quiz(const std::string & name){
+    this->name = name;
 }
 
 Quiz::~Quiz(){
@@ -17,6 +17,10 @@ std::string Quiz::getname() const{
 
 std::string Quiz::setname(std::string newname){
 	return name = newname;
+}
+
+void Quiz::addQuestion(Question question) {
+    this->questions.push_back(question);
 }
 
 void Quiz::run(int user_id) const{

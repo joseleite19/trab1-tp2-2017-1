@@ -13,6 +13,7 @@ class Subject {
 public:
     std::string getName();
     void setName(std::string new_name);
+    void addTopic(Topic);
     void showTopics(int user_id);
     Subject(const std::string &);
     ~Subject();

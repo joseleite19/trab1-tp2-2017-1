@@ -13,14 +13,22 @@
 void ControllerInit::initialize() {
     this->controllerUIAuth = new ControllerUIAuth();
     this->controllerUIUser = new ControllerUIUser();
+    this->controllerUIAdmin = new ControllerUIAdmin();
+    this->controllerUIQuiz = new ControllerUIQuiz();
     this->controllerBLAuth = new ControllerBLAuth();
     this->controllerBLUser = new ControllerBLUser();
+    this->controllerBLAdmin = new ControllerBLAdmin();
+    this->controllerBLQuiz = new ControllerBLQuiz();
  
     this->controllerPR     = new StubPR();
     this->controllerUIAuth ->setDownstreamController(controllerBLAuth);
     this->controllerUIUser ->setDownstreamController(controllerBLUser);
+    this->controllerUIAdmin ->setDownstreamController(controllerBLAdmin);
+    this->controllerUIQuiz ->setDownstreamController(controllerBLQuiz);
     this->controllerBLAuth ->setDownstreamController(controllerPR);
     this->controllerBLUser ->setDownstreamController(controllerPR);
+    this->controllerBLAdmin ->setDownstreamController(controllerPR);
+    this->controllerBLQuiz ->setDownstreamController(controllerPR);
 }
 
 ControllerInit::~ControllerInit() {
@@ -28,6 +36,10 @@ ControllerInit::~ControllerInit() {
     delete controllerBLAuth;
     delete controllerUIUser;
     delete controllerBLUser;
+    delete controllerUIAdmin;
+    delete controllerBLAdmin;
+    delete controllerUIQuiz;
+    delete controllerBLQuiz;
     delete controllerPR;
 }
 
@@ -46,8 +58,8 @@ void ControllerInit::showUI() {
             printf("2. Gerenciar disciplinas\n");
             printf("3. Responder quiz\n");
             if(user->isAdmin()) {
-                printf("4. Cadastrar aluno\n");
-                printf("5. Criar disciplina/quiz\n");
+                printf("4. Gerenciar banco de dados de alunos\n");
+                printf("5. Gerenciar banco de dados de disciplinas\n");
             }
         }
         printf("9. Fazer log-out\n");
@@ -62,9 +74,9 @@ void ControllerInit::showUI() {
                     else this->controllerUIUser->manageUserData(user);
                     sel = -1; break;
             case 2: this->controllerUIUser->manageUserSubjects(user); sel = -1; break;
-            //case 3: this->controllerUIUser->answerQuiz(user); sel = -1; break;
-            //case 4: this->controllerUISystemData->manageStudents(); sel = -1; break;
-            //case 5: this->controllerUISystemData->manageSubjects(); sel = -1; break;
+            case 3: this->controllerUIQuiz->answerQuiz(user); sel = -1; break;
+            case 4: this->controllerUIAdmin->manageStudents(); sel = -1; break;
+            //case 5: this->controllerUIAdmin->manageSubjects(); sel = -1; break;
             case 9: user = nullptr; sel = -1; break;
             default: break;
         }
@@ -211,7 +223,6 @@ void ControllerUIUser::showSubjects(User * user) {
 
 void ControllerUIUser::includeSubject(User * user) {
     std::queue<Subject> subjects_bank;
-    std::queue<Subject> aux;
     std::map <int, string> subs_map;
     int sel = -1;
     int i;
@@ -223,7 +234,6 @@ void ControllerUIUser::includeSubject(User * user) {
         i = 1;
         while(!subjects_bank.empty()) {
             printf("%d. %s\n", i, subjects_bank.front().getName().c_str());
-            aux.push(subjects_bank.front());
             subs_map[i] = subjects_bank.front().getName();
             subjects_bank.pop();
             i++;
@@ -251,7 +261,6 @@ void ControllerBLUser::includeSubject(User * user, const string & name) {
 
 void ControllerUIUser::removeSubject(User * user) {
     std::queue<Subject> subjects;
-    std::queue<Subject> aux;
     std::map <int, string> subs_map;
     int sel = -1;
     int i;
@@ -263,7 +272,6 @@ void ControllerUIUser::removeSubject(User * user) {
         i = 1;
         while(!subjects.empty()) {
             printf("%d. %s\n", i, subjects.front().getName().c_str());
-            aux.push(subjects.front());
             subs_map[i] = subjects.front().getName();
             subjects.pop();
             i++;
@@ -284,3 +292,112 @@ void ControllerBLUser::removeSubject(User * user, const string & name) {
     controllerPR->deleteSubject(user, name);
     user = controllerPR->retrieveUser(user->getLogin());
 }
+
+// ADMINISTRATOR
+
+ControllerUIAdmin::ControllerUIAdmin () { }
+ControllerUIAdmin::~ControllerUIAdmin() { }
+
+void ControllerUIAdmin::manageStudents() {
+    int sel = -1;
+    while(sel != 0) {
+        char buffer[64];
+        system(CLEAR);
+        printf("QuizTime - Gerenciamento de Contas\n\n");
+
+        printf("1. Cadastrar novo aluno\n");
+        printf("2. Remover aluno\n");
+        printf("0. Voltar\n");
+        printf("\nInforme a opcao desejada: ");
+
+        fgets(buffer, sizeof(buffer), stdin);
+        sscanf(buffer, "%d", &sel);
+
+        switch(sel) {
+            case 1: includeStudent(); sel = -1; break;
+            case 2: removeStudent(); sel = -1; break;
+            default: break;
+        }
+    }
+}
+
+void ControllerUIAdmin::includeStudent() {
+    string name, login, pass, adm;
+    system(CLEAR);
+    printf("QuizTime - Novo Aluno\n\n");
+    printf("Nome do aluno: ");
+    getline(cin, name);
+    printf("Login: ");
+    getline(cin, login);
+    printf("Senha: ");
+    getline(cin, pass);
+    printf("Deseja atribuir ao aluno status de admin? (s/n)");
+    while(adm != "s" && adm != "n") {
+        getline(cin, adm);
+    }
+    if(!controllerBL->includeStudent(name, login, pass, adm == "s")){
+        printf("\nErro: login já cadastrado.\n");
+        getchar();
+    } else {
+        printf("\nAluno cadastrado com sucesso.\n");
+        getchar();
+    }
+}
+
+ControllerBLAdmin::ControllerBLAdmin () { }
+ControllerBLAdmin::~ControllerBLAdmin() { }
+
+bool ControllerBLAdmin::includeStudent(const string& name, const string& login, const string& pass, int adm) {
+    User * user = new User(name, login, pass, adm);
+    if(controllerPR->storeUserData(user)) return true;
+    return false;
+}
+
+void ControllerUIAdmin::removeStudent() {
+    std::queue<User> user_bank;
+    std::map <int, User*> user_map;
+    int sel = -1;
+    int i;
+    while(sel != 0) {
+        char buffer[64];
+        system(CLEAR);
+        printf("QuizTime - Remover Usuario\n\n");
+        user_bank = controllerBL->getUserBank();
+        i = 1;
+        while(!user_bank.empty()) {
+            if(!user_bank.front().isAdmin()) {
+                printf("%d. %s\n", i, user_bank.front().getLogin().c_str());
+                user_map[i] = &user_bank.front();
+                i++;
+            }
+            user_bank.pop();
+        }
+        printf("0. Voltar\n");
+        printf("\nInforme o numero do usuario a ser removido: ");
+
+        fgets(buffer, sizeof(buffer), stdin);
+        sscanf(buffer, "%d", &sel);
+
+        if(sel != 0) {
+            controllerBL->removeStudent(user_map[sel]);
+        }
+    }
+}
+
+void ControllerBLAdmin::removeStudent(User * user) {
+    controllerPR->deleteUser(user);
+}
+
+std::queue<User> ControllerBLAdmin::getUserBank() {
+    return controllerPR->getUserBank();
+}
+
+/// QUIZ
+
+ControllerUIQuiz::ControllerUIQuiz () { }
+ControllerUIQuiz::~ControllerUIQuiz() { }
+
+ControllerBLQuiz::ControllerBLQuiz () { }
+ControllerBLQuiz::~ControllerBLQuiz() { }
+
+void ControllerUIQuiz::answerQuiz(User * user) {}

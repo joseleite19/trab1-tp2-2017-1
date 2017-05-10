@@ -20,6 +20,10 @@ std::string Subject::getName() {
     return this->name;
 }
 
+void Subject::addTopic(Topic topic) {
+    this->topics.push_back(topic);
+}
+
 void Subject::showTopics(int user_id) {
     std::vector<int> id = randompermutation(topics.size());
 	std::queue<Topic> t;

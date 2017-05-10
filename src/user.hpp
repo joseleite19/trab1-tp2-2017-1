@@ -26,7 +26,7 @@ public:
     void setName(const string&);
     void showSubjects();
     std::queue<Subject> getSubjects();
-    void includeSubject(const string &);
+    void includeSubject(Subject);
     void removeSubject(const string &);
 };
 

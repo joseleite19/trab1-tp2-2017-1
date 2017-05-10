@@ -11,8 +11,12 @@ class ControllerInit {
 private:
     InterfaceUIAuth * controllerUIAuth;
     InterfaceUIUser * controllerUIUser;
+    InterfaceUIAdmin * controllerUIAdmin;
+    InterfaceUIQuiz * controllerUIQuiz;
     InterfaceBLAuth * controllerBLAuth;
     InterfaceBLUser * controllerBLUser;
+    InterfaceBLAdmin * controllerBLAdmin;
+    InterfaceBLQuiz * controllerBLQuiz;
     StubPR * controllerPR;
     User * user = nullptr;
 
@@ -48,7 +52,6 @@ public:
 /// USER
 
 class ControllerUIUser : public InterfaceUIUser {
-
 private:
     InterfaceBLUser * controllerBL;
 public:
@@ -76,6 +79,53 @@ public:
     inline void setDownstreamController(StubPR * controllerPR) { this->controllerPR = controllerPR; }
     ControllerBLUser(void);
     ~ControllerBLUser(void);
+};
+
+/// ADMIN
+
+class ControllerUIAdmin : public InterfaceUIAdmin {
+private:
+    InterfaceBLAdmin * controllerBL;
+public:
+    void manageStudents();
+    void includeStudent();
+    void removeStudent();
+    inline void setDownstreamController(InterfaceBLAdmin * controllerBL) { this->controllerBL = controllerBL; }
+    ControllerUIAdmin();
+    ~ControllerUIAdmin();
+};
+
+class ControllerBLAdmin : public InterfaceBLAdmin {
+private:
+    StubPR * controllerPR;
+public:
+    bool includeStudent(const string &, const string &, const string &, int);
+    std::queue<User> getUserBank();
+    void removeStudent(User *);
+    inline void setDownstreamController(StubPR * controllerPR) { this->controllerPR = controllerPR; }
+    ControllerBLAdmin();
+    ~ControllerBLAdmin();
+};
+
+/// Quiz
+
+class ControllerUIQuiz : public InterfaceUIQuiz {
+private:
+    InterfaceBLQuiz * controllerBL;
+public:
+    void answerQuiz(User *);
+    inline void setDownstreamController(InterfaceBLQuiz * controllerBL) { this->controllerBL = controllerBL; }
+    ControllerUIQuiz();
+    ~ControllerUIQuiz();
+};
+
+class ControllerBLQuiz : public InterfaceBLQuiz {
+private:
+    StubPR * controllerPR;
+public:
+    inline void setDownstreamController(StubPR * controllerPR) { this->controllerPR = controllerPR; }
+    ControllerBLQuiz();
+    ~ControllerBLQuiz();
 };
 
 #endif

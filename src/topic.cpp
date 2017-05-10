@@ -3,8 +3,8 @@
 #include "helper.hpp"
 #include "quiz.hpp"
 
-Topic::Topic(){
-
+Topic::Topic(const std::string & name){
+    this->name = name;
 }
 
 Topic::~Topic(){
@@ -19,6 +19,10 @@ void Topic::setName(std::string new_name) {
     this->name = new_name;
 }
 
+void Topic::addQuiz(Quiz quiz) {
+    this->quizzes.push_back(quiz);
+}
+
 void Topic::showQuizzes(int user_id) {
     std::vector<int> id = randompermutation(quizzes.size());
 	std::queue<Quiz> qz;
@@ -30,6 +34,4 @@ void Topic::showQuizzes(int user_id) {
 
 		quizz.run(user_id);
     }
-
-
 }

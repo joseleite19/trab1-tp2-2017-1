@@ -10,10 +10,11 @@ class Quiz{
 	std::vector<Question> questions;
 
 public:
-	Quiz();
+	Quiz(const std::string &);
 	~Quiz();
 	std::string getname() const;
 	std::string setname(std::string);
+    void addQuestion(Question);
 
 	void run(int user_id) const;
 };

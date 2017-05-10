@@ -14,6 +14,8 @@
 
 class InterfaceBLAuth;
 class InterfaceBLUser;
+class InterfaceBLAdmin;
+class InterfaceBLQuiz;
 class StubPR;
 
 /// Interface do Módulo UI de Autenticação
@@ -56,6 +58,41 @@ public:
     virtual void removeSubject(User *, const string &) = 0;
     virtual void setDownstreamController(StubPR *) = 0;
     virtual ~InterfaceBLUser(void) {}
+};
+
+/// Interface do Módulo UI de Admin
+class InterfaceUIAdmin {
+public:
+    virtual void manageStudents(void) = 0;
+    virtual void includeStudent(void) = 0;
+    virtual void removeStudent(void) = 0;
+    virtual void setDownstreamController(InterfaceBLAdmin *) = 0;
+    virtual ~InterfaceUIAdmin(void) {}
+};
+
+/// Interface do Módulo BL de Admin
+class InterfaceBLAdmin {
+public:
+    virtual bool includeStudent(const string &, const string &, const string &, int) = 0;
+    virtual std::queue<User> getUserBank(void) = 0;
+    virtual void removeStudent(User *) = 0;
+    virtual void setDownstreamController(StubPR *) = 0;
+    virtual ~InterfaceBLAdmin(void) {}
+};
+
+/// Interface do Módulo UI de Quiz
+class InterfaceUIQuiz {
+public:
+    virtual void (answerQuiz(User *)) = 0;
+    virtual void setDownstreamController(InterfaceBLQuiz *) = 0;
+    virtual ~InterfaceUIQuiz(void) {}
+};
+
+/// Interface do Módulo BL de Admin
+class InterfaceBLQuiz {
+public:
+    virtual void setDownstreamController(StubPR *) = 0;
+    virtual ~InterfaceBLQuiz(void) {}
 };
 
 #endif

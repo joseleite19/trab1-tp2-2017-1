@@ -48,8 +48,18 @@ bool User::setPassword(const string& oldpass, const string& newpass){
 	return false;
 }
 
-void User::includeSubject(const string & subject) {
-    this->subjects.push(Subject(subject));
+void User::includeSubject(Subject subject) {
+    int already_in = 0;
+    std::queue<Subject> aux;
+    while(!this->subjects.empty()) {
+        if(this->subjects.front().getName() == subject.getName()) {
+            already_in = 1;
+        }
+        aux.push(this->subjects.front());
+        this->subjects.pop();
+    }
+    this->subjects = aux;
+    if(!already_in) this->subjects.push(subject);
 }
 
 void User::removeSubject(const string & subject) {

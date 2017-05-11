@@ -7,7 +7,8 @@
     #define CLEAR "clear"
 #endif
 
-#include <queue>
+#include <vector>
+#include <map>
 #include "user.hpp"
 #include "stubPR.hpp"
 #include "subject.hpp"
@@ -53,7 +54,7 @@ class InterfaceBLUser {
 public:
     virtual bool changeName(User *, const string &) = 0;
     virtual bool changePass(User *, const string &, const string &) = 0;
-    virtual std::queue<Subject> getSubjectsBank(void) = 0;
+    virtual std::map<std::string,Subject*>& getSubjectsBank(void) = 0;
     virtual void includeSubject(User *, const string &) = 0;
     virtual void removeSubject(User *, const string &) = 0;
     virtual void setDownstreamController(StubPR *) = 0;
@@ -74,7 +75,7 @@ public:
 class InterfaceBLAdmin {
 public:
     virtual bool includeStudent(const string &, const string &, const string &, int) = 0;
-    virtual std::queue<User> getUserBank(void) = 0;
+    virtual std::map<std::string,User*>& getUserBank(void) = 0;
     virtual void removeStudent(User *) = 0;
     virtual void setDownstreamController(StubPR *) = 0;
     virtual ~InterfaceBLAdmin(void) {}

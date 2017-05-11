@@ -3,6 +3,7 @@
 #include <string>
 #include <typeinfo>
 #include <map>
+#include <algorithm>
 
 #include "user.hpp"
 #include "controllers.hpp"
@@ -11,23 +12,23 @@
 /// INITIALIZATION
 
 void ControllerInit::initialize() {
-    this->controllerUIAuth = new ControllerUIAuth();
-    this->controllerUIUser = new ControllerUIUser();
+    this->controllerUIAuth  = new ControllerUIAuth();
+    this->controllerUIUser  = new ControllerUIUser();
     this->controllerUIAdmin = new ControllerUIAdmin();
-    this->controllerUIQuiz = new ControllerUIQuiz();
-    this->controllerBLAuth = new ControllerBLAuth();
-    this->controllerBLUser = new ControllerBLUser();
+    this->controllerUIQuiz  = new ControllerUIQuiz();
+    this->controllerBLAuth  = new ControllerBLAuth();
+    this->controllerBLUser  = new ControllerBLUser();
     this->controllerBLAdmin = new ControllerBLAdmin();
-    this->controllerBLQuiz = new ControllerBLQuiz();
+    this->controllerBLQuiz  = new ControllerBLQuiz();
  
-    this->controllerPR     = new StubPR();
+    this->controllerPR      = new StubPR();
     this->controllerUIAuth ->setDownstreamController(controllerBLAuth);
     this->controllerUIUser ->setDownstreamController(controllerBLUser);
-    this->controllerUIAdmin ->setDownstreamController(controllerBLAdmin);
+    this->controllerUIAdmin->setDownstreamController(controllerBLAdmin);
     this->controllerUIQuiz ->setDownstreamController(controllerBLQuiz);
     this->controllerBLAuth ->setDownstreamController(controllerPR);
     this->controllerBLUser ->setDownstreamController(controllerPR);
-    this->controllerBLAdmin ->setDownstreamController(controllerPR);
+    this->controllerBLAdmin->setDownstreamController(controllerPR);
     this->controllerBLQuiz ->setDownstreamController(controllerPR);
 }
 
@@ -61,8 +62,8 @@ void ControllerInit::showUI() {
                 printf("4. Gerenciar banco de dados de alunos\n");
                 printf("5. Gerenciar banco de dados de disciplinas\n");
             }
+            printf("9. Fazer log-out\n");
         }
-        printf("9. Fazer log-out\n");
         printf("0. Sair\n");
         printf("\nInforme a opcao desejada: ");
 
@@ -180,7 +181,7 @@ void ControllerUIUser::changeName(User * user) {
     name = user->getName();
     system(CLEAR);
     printf("QuizTime - Alterar Nome\n\n");
-    printf("O seu nome atual eh %s\n", name.c_str());
+    printf("O seu nome atual é %s\n", name.c_str());
     printf("Insira um novo nome: ");
     getline(cin, new_name);
 
@@ -222,20 +223,22 @@ void ControllerUIUser::showSubjects(User * user) {
 }
 
 void ControllerUIUser::includeSubject(User * user) {
-    std::queue<Subject> subjects_bank;
     std::map <int, string> subs_map;
     int sel = -1;
     int i;
     while(sel != 0) {
+        auto subs=user->getSubjects();
         char buffer[64];
         system(CLEAR);
         printf("QuizTime - Matricula em Disciplina\n\n");
-        subjects_bank = controllerBL->getSubjectsBank();
         i = 1;
-        while(!subjects_bank.empty()) {
-            printf("%d. %s\n", i, subjects_bank.front().getName().c_str());
-            subs_map[i] = subjects_bank.front().getName();
-            subjects_bank.pop();
+        for(auto it:controllerBL->getSubjectsBank()){
+
+            auto iter=std::find_if(subs.begin(),subs.end(),[it](const Subject& comp){return comp.getName()==it.second->getName();});
+            if(iter!=subs.end())continue;
+
+            printf("%d. %s\n", i, it.second->getName().c_str());
+            subs_map[i] = it.second->getName();
             i++;
         }
         printf("0. Voltar\n");
@@ -250,7 +253,7 @@ void ControllerUIUser::includeSubject(User * user) {
     } 
 }
 
-std::queue<Subject> ControllerBLUser::getSubjectsBank() {
+std::map<std::string,Subject*>& ControllerBLUser::getSubjectsBank() {
     return controllerPR->getSubjectsBank();
 }
 
@@ -260,7 +263,7 @@ void ControllerBLUser::includeSubject(User * user, const string & name) {
 }
 
 void ControllerUIUser::removeSubject(User * user) {
-    std::queue<Subject> subjects;
+    std::vector<Subject> subjects;
     std::map <int, string> subs_map;
     int sel = -1;
     int i;
@@ -270,10 +273,9 @@ void ControllerUIUser::removeSubject(User * user) {
         printf("QuizTime - Trancamento de Disciplina\n\n");
         subjects = user->getSubjects();
         i = 1;
-        while(!subjects.empty()) {
-            printf("%d. %s\n", i, subjects.front().getName().c_str());
-            subs_map[i] = subjects.front().getName();
-            subjects.pop();
+        for(Subject &sub:subjects){
+            printf("%d. %s\n", i, sub.getName().c_str());
+            subs_map[i] = sub.getName();
             i++;
         }
         printf("0. Voltar\n");
@@ -354,7 +356,6 @@ bool ControllerBLAdmin::includeStudent(const string& name, const string& login, 
 }
 
 void ControllerUIAdmin::removeStudent() {
-    std::queue<User> user_bank;
     std::map <int, User*> user_map;
     int sel = -1;
     int i;
@@ -362,15 +363,14 @@ void ControllerUIAdmin::removeStudent() {
         char buffer[64];
         system(CLEAR);
         printf("QuizTime - Remover Usuario\n\n");
-        user_bank = controllerBL->getUserBank();
         i = 1;
-        while(!user_bank.empty()) {
-            if(!user_bank.front().isAdmin()) {
-                printf("%d. %s\n", i, user_bank.front().getLogin().c_str());
-                user_map[i] = &user_bank.front();
+        for(auto it:controllerBL->getUserBank()){
+            User *user=it.second;
+            if(!user->isAdmin()) {
+                printf("%d. %s\n", i, it.first.c_str()/*username*/);
+                user_map[i] = user;
                 i++;
             }
-            user_bank.pop();
         }
         printf("0. Voltar\n");
         printf("\nInforme o numero do usuario a ser removido: ");
@@ -388,7 +388,7 @@ void ControllerBLAdmin::removeStudent(User * user) {
     controllerPR->deleteUser(user);
 }
 
-std::queue<User> ControllerBLAdmin::getUserBank() {
+std::map<std::string,User*>& ControllerBLAdmin::getUserBank() {
     return controllerPR->getUserBank();
 }
 

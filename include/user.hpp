@@ -2,7 +2,7 @@
 #define USER
 
 #include <string>
-#include <queue>
+#include <vector>
 #include "subject.hpp"
 #include "topic.hpp"
 #include "quiz.hpp"
@@ -12,7 +12,7 @@ class User{
 private:
 	string name, login, password;
 	bool admin;
-    std::queue<Subject> subjects;
+    std::vector<Subject> subjects;
 public:
 	User(const string&, const string&, const string&, const bool&);
 	~User();
@@ -25,7 +25,7 @@ public:
 	bool setPassword(const string&, const string&);
     void setName(const string&);
     void showSubjects();
-    std::queue<Subject> getSubjects();
+    std::vector<Subject> getSubjects();
     void includeSubject(Subject);
     void removeSubject(const string &);
 };

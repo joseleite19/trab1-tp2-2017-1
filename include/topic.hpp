@@ -14,7 +14,7 @@ public:
     std::string getName() const;
     void setName(std::string new_name);
     void addQuiz(Quiz);
-    void showQuizzes(int user_id);
+    void showQuizzes(int user_id) const;
 };
 
 #endif // USERHPP

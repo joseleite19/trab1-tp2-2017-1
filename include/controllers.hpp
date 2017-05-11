@@ -1,7 +1,8 @@
 #ifndef CONTROLLERS_H
 #define CONTROLLERS_H
 
-#include <queue>
+#include <vector>
+#include <map>
 #include "interfaces.hpp"
 #include "subject.hpp"
 
@@ -73,7 +74,7 @@ private:
 public:
     bool changeName(User *, const string &);
     bool changePass(User *, const string &, const string &);
-    std::queue<Subject> getSubjectsBank();
+    std::map<std::string,Subject*>& getSubjectsBank();
     void includeSubject(User *, const string &);
     void removeSubject(User *, const string &);
     inline void setDownstreamController(StubPR * controllerPR) { this->controllerPR = controllerPR; }
@@ -100,7 +101,7 @@ private:
     StubPR * controllerPR;
 public:
     bool includeStudent(const string &, const string &, const string &, int);
-    std::queue<User> getUserBank();
+    std::map<std::string,User*>& getUserBank();
     void removeStudent(User *);
     inline void setDownstreamController(StubPR * controllerPR) { this->controllerPR = controllerPR; }
     ControllerBLAdmin();

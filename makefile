@@ -2,7 +2,7 @@ SRC_DIR = src
 HEADERS_DIR = include
 OBJ_DIR = obj
 COMP = g++
-EXE = exe
+EXE = quiz
 DIRECTIVES = -Wall -std=c++11 -I$(HEADERS_DIR)
 
 CPP_FILES = $(wildcard $(SRC_DIR)/*.cpp)
@@ -33,3 +33,7 @@ run : all
 clean :
 	rm -f -r $(OBJ_DIR)
 	rm -f $(EXE)
+
+#compila o projeto com diretivas de debug
+debug : DIRECTIVES += -ggdb -O0
+debug : all

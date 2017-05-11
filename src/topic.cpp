@@ -1,5 +1,5 @@
 #include "topic.hpp"
-#include <queue>
+#include <vector>
 #include "helper.hpp"
 #include "quiz.hpp"
 
@@ -23,15 +23,8 @@ void Topic::addQuiz(Quiz quiz) {
     this->quizzes.push_back(quiz);
 }
 
-void Topic::showQuizzes(int user_id) {
+void Topic::showQuizzes(int user_id) const{
     std::vector<int> id = randompermutation(quizzes.size());
-	std::queue<Quiz> qz;
 
-	for(uint i = 0; i < quizzes.size(); i++)
-		qz.push(quizzes[ id[i] ]);
-    while(!qz.empty()){
-		Quiz quizz = qz.front(); qz.pop();
-
-		quizz.run(user_id);
-    }
+    for(int i:id)quizzes[i].run(user_id);
 }

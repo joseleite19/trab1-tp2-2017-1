@@ -1,6 +1,6 @@
 #include "quiz.hpp"
 
-#include <queue>
+#include <vector>
 #include "helper.hpp"
 
 Quiz::Quiz(const std::string & name){
@@ -26,29 +26,22 @@ void Quiz::addQuestion(Question question) {
 void Quiz::run(int user_id) const{
 	std::vector<int> id = randompermutation(questions.size());
 
-	std::queue<Question> q;
-
-	for(uint i = 0; i < questions.size(); i++)
-		q.push(questions[ id[i] ]);
-
 	int qnt_resp_certas = 0;
 
-	while(!q.empty()){
-		Question questao = q.front(); q.pop();
-
-		questao.show();
+	for(int i:id){
+		questions[i].show();
 
 		// menu: 1 = responder; 0 = pular; -1 = sair
 
 		int op = readIntInRange(-1, 1);
-		if(op == 0) q.push(questao);
+		if(op == 0) id.push_back(i);
 		else if(op == -1){
 			// msg: voce escolheu sair do quiz
 			return;
 		}
 		else{
 			char c = readchar();
-			if(c == questao.getresp()) qnt_resp_certas++;
+			if(c == questions[i].getresp()) qnt_resp_certas++;
 		}
 	}
 

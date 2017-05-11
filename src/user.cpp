@@ -1,18 +1,14 @@
 #include "user.hpp"
 #include <string>
-#include <queue>
+#include <vector>
+#include <algorithm>
 #include "helper.hpp"
 #include "subject.hpp"
 #include "topic.hpp"
 #include "quiz.hpp"
 
 User::User(const string& name, const string& login, const string& pass,
-	 const bool& admin) : name(name), login(login), password(pass), admin(admin){
-
-    std::queue<Subject> s;
-    this->subjects = s;
-
-    }
+	 const bool& admin) : name(name), login(login), password(pass), admin(admin){ }
 
 User::~User() { }
 	
@@ -33,7 +29,7 @@ string User :: getLogin() const{
 }
 
 bool User::tryLogin(const string& plogin, const string& ppassword) const{
-	return plogin == this->login && ppassword == this->password;
+	return (plogin == this->login) && (ppassword == this->password);
 }
 
 bool User::isAdmin() {
@@ -49,40 +45,19 @@ bool User::setPassword(const string& oldpass, const string& newpass){
 }
 
 void User::includeSubject(Subject subject) {
-    int already_in = 0;
-    std::queue<Subject> aux;
-    while(!this->subjects.empty()) {
-        if(this->subjects.front().getName() == subject.getName()) {
-            already_in = 1;
-        }
-        aux.push(this->subjects.front());
-        this->subjects.pop();
-    }
-    this->subjects = aux;
-    if(!already_in) this->subjects.push(subject);
+    auto it=std::find_if(this->subjects.begin(),this->subjects.end(),[subject](const Subject& comp){return comp.getName()==subject.getName();});
+    if(it==this->subjects.end()) this->subjects.push_back(subject);
 }
 
-void User::removeSubject(const string & subject) {
-    std::queue<Subject> aux;
-    while(!this->subjects.empty()) {
-        if(this->subjects.front().getName() != subject) {
-            aux.push(this->subjects.front());
-        }
-        this->subjects.pop();
-    }
-    this->subjects = aux;
+void User::removeSubject(const string &subject) {
+    auto it=std::find_if(this->subjects.begin(),this->subjects.end(),[subject](const Subject& comp){return comp.getName()==subject;});
+    if(it!=this->subjects.end()) this->subjects.erase(it);
 }
 
-std::queue<Subject> User::getSubjects() {
+std::vector<Subject> User::getSubjects() {
     return this->subjects;
 }
 
 void User::showSubjects() {
-    std::queue<Subject> aux;
-    while(!this->subjects.empty()) {
-        printf("%s\n", this->subjects.front().getName().c_str());
-        aux.push(this->subjects.front());
-        this->subjects.pop();
-    }
-    this->subjects = aux;
+    for(Subject &sub:subjects)printf("%s\n", sub.getName().c_str());
 }

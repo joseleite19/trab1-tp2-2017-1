@@ -28,3 +28,7 @@ void Topic::showQuizzes(int user_id) const{
 
     for(int i:id)quizzes[i].run(user_id);
 }
+
+const std::vector<Quiz>& Topic::getQuizes() const{
+	return quizzes;
+}

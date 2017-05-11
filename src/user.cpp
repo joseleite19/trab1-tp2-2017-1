@@ -54,7 +54,7 @@ void User::removeSubject(const string &subject) {
     if(it!=this->subjects.end()) this->subjects.erase(it);
 }
 
-std::vector<Subject> User::getSubjects() {
+std::vector<Subject>& User::getSubjects() {
     return this->subjects;
 }
 

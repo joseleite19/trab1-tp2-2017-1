@@ -247,7 +247,7 @@ void ControllerUIUser::includeSubject(User * user) {
         fgets(buffer, sizeof(buffer), stdin);
         sscanf(buffer, "%d", &sel);
 
-        if(sel != 0) {
+        if(sel != 0 && sel<i) {
             controllerBL->includeSubject(user, subs_map[sel]);
         }
     } 

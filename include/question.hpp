@@ -12,6 +12,7 @@ public:
 	void show() const;
 	char getresp() const;
 
+	const std::string& getText() const;
 };
 
 

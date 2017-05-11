@@ -15,6 +15,8 @@ public:
     void setName(std::string new_name);
     void addTopic(Topic);
     void showTopics(int user_id) const;
+    const std::vector<Topic>& getTopics() const;
+
     Subject(const std::string &);
     ~Subject();
 };

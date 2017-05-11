@@ -15,6 +15,7 @@ public:
     void setName(std::string new_name);
     void addQuiz(Quiz);
     void showQuizzes(int user_id) const;
+    const std::vector<Quiz>& getQuizes() const;
 };
 
 #endif // USERHPP

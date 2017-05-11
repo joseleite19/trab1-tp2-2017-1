@@ -25,7 +25,7 @@ public:
 	bool setPassword(const string&, const string&);
     void setName(const string&);
     void showSubjects();
-    std::vector<Subject> getSubjects();
+    std::vector<Subject>& getSubjects();
     void includeSubject(Subject);
     void removeSubject(const string &);
 };

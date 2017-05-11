@@ -16,6 +16,8 @@ public:
     void addQuestion(Question);
 
 	void run(int user_id) const;
+
+    const std::vector<Question>& getQuestions() const;
 };
 
 

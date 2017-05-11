@@ -48,3 +48,7 @@ void Quiz::run(int user_id) const{
 	// aqui a pessoa terminou de fazer o Quiz
 
 }
+
+const std::vector<Question>& Quiz::getQuestions() const{
+	return questions;
+}

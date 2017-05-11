@@ -13,3 +13,7 @@ void Question::show() const{
 char Question::getresp() const{
 	return resp;
 }
+
+const std::string& Question::getText() const{
+	return text;
+}

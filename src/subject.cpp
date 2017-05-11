@@ -29,3 +29,7 @@ void Subject::showTopics(int user_id) const{
 
 	for(int i:id)topics[i].showQuizzes(user_id);
 }
+
+const std::vector<Topic>& Subject::getTopics() const{
+	return topics;
+}

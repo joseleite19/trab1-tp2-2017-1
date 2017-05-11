@@ -26,9 +26,10 @@ void StubPR::loadUsers(const string fileName){
 	std::string line,name,login,pw,subject;
 	User* user;
 	int admin;
+	int countSubj;
 	file.open(fileName);
 	if(file.is_open()){
-		while(std::getline(file,line)){
+		while(std::getline(file,line) && !line.empty()){
 			std::stringstream lineStream(line);
 
 			std::getline(lineStream,name,'\\');
@@ -36,11 +37,13 @@ void StubPR::loadUsers(const string fileName){
 			std::getline(lineStream,pw,'\\');
 			lineStream >> admin;
 			lineStream.ignore(256,'\\');
+			lineStream >> countSubj;
+			lineStream.ignore(256,'\\');
 
 			user=new User(name,login,pw,admin);
 			users[login]=user;
 
-			for(int i=0;i<admin-1;i++){
+			for(int i=0;i<countSubj;i++){
 				std::getline(lineStream,subject,'\\');
 				if(subjects.count(subject)==0)printf("Erro encontrado em '%s': usuario '%s' tem matéria não existente '%s'\n",fileName.c_str(),name.c_str(),subject.c_str());
 				else user->includeSubject(*subjects[subject]);
@@ -52,8 +55,26 @@ void StubPR::loadUsers(const string fileName){
 		printf("Erro ao ler arquivo '%s'\n",fileName.c_str());
 	}
 }
-void StubPR::saveUsers(string s){
-	printf("saveUsers = TODO\n");
+void StubPR::saveUsers(string fileName){
+	ofstream file(fileName);
+	if(!file.is_open()){
+		printf("Erro ao abrir arquivo %s\n",fileName.c_str());
+		return;
+	}
+	for(auto it:users){
+		User* user=it.second;
+		file << user->getName() << "\\";
+		file << user->getLogin() << "\\";
+		file << user->getPassword() << "\\";
+		file << user->isAdmin() << "\\";
+
+		std::vector<Subject>& subs=user->getSubjects();
+		file << subs.size() << "\\";
+		for(uint i=0;i<subs.size();i++)file << subs[i].getName() << "\\";
+
+		file << "\n";
+	}
+	file.close();
 }
 
 void StubPR::loadSubjects(string fileName){
@@ -66,7 +87,7 @@ void StubPR::loadSubjects(string fileName){
 	Question *question;
 	file.open(fileName);
 	if(file.is_open()){
-		while(std::getline(file,line)){
+		while(std::getline(file,line) && !line.empty()){
 			std::stringstream lineStream(line);
 
 			std::getline(lineStream,name,'\\');
@@ -119,8 +140,40 @@ void StubPR::loadSubjects(string fileName){
 		printf("Erro ao ler arquivo '%s'\n",fileName.c_str());
 	}
 }
-void StubPR::saveSubjects(string s){
-	printf("saveSubjects = TODO\n");
+void StubPR::saveSubjects(string fileName){
+	ofstream file(fileName);
+	if(!file.is_open()){
+		printf("Erro ao abrir arquivo %s\n",fileName.c_str());
+		return;
+	}
+	for(auto it:subjects){
+		Subject* sub=it.second;
+		file << sub->getName() << "\\";
+		const std::vector<Topic>& topics=sub->getTopics();
+		file << topics.size() << "\\";
+		file << std::endl;
+
+		for(const Topic &topic:topics){
+			file << topic.getName() << "\\";
+			const std::vector<Quiz>& quizes=topic.getQuizes();
+			file << quizes.size() << "\\";
+			file << std::endl;
+
+			for(const Quiz &quiz:quizes){
+				file << quiz.getname() << "\\";
+				const std::vector<Question>& questions=quiz.getQuestions();
+				file << questions.size() << "\\";
+				file << std::endl;
+
+				for(const Question &question:questions){
+					file << question.getText() << "\\";
+					file << (int)question.getresp() << "\\";
+					file << std::endl;
+				}
+			}
+		}
+	}
+	file.close();
 }
 
 

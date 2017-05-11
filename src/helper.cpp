@@ -4,27 +4,17 @@
 #include <cstdlib>
 #include <ctime>
 #include <cstdio>
+#include <algorithm>
 
 std::vector<int> randompermutation(int size){
-	std::vector<int> ret(size, 0);
-	std::list<int> tmp;
-	std::list<int>::iterator it;
+	std::vector<int> ret(size);
+	std::iota(ret.begin(),ret.end(),1);
+	return ret;
+}
 
-	for(int i = 0; i < size; i++)
-		tmp.push_back(i);
-
-	srand(time(NULL));
-	for(int i = 0; i < size; i++){
-		int id = rand() % int(tmp.size());
-
-		it = tmp.begin();
-		while(id--) it++;
-
-		ret[i] = *it;
-
-		tmp.erase(it);
-	}
-
+std::queue<int> randompermutationQ(int size){
+	std::queue<int> ret;
+	for(int i:randompermutation(size))ret.push(i);
 	return ret;
 }
 

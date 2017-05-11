@@ -24,17 +24,17 @@ void Quiz::addQuestion(Question question) {
 }
 
 void Quiz::run(int user_id) const{
-	std::vector<int> id = randompermutation(questions.size());
+	std::queue<int> id = randompermutationQ(questions.size());
 
 	int qnt_resp_certas = 0;
 
-	for(int i:id){
+	for(int i=id.front();!id.empty();id.pop()){
 		questions[i].show();
 
 		// menu: 1 = responder; 0 = pular; -1 = sair
 
 		int op = readIntInRange(-1, 1);
-		if(op == 0) id.push_back(i);
+		if(op == 0) id.push(i);
 		else if(op == -1){
 			// msg: voce escolheu sair do quiz
 			return;

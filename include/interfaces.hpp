@@ -65,6 +65,13 @@ public:
 class InterfaceUIAdmin {
 public:
     virtual void manageStudents(void) = 0;
+    virtual void manageSubjects(void) = 0;
+    virtual void includeSubject(void) = 0;
+    virtual void includeTopic(void) = 0;
+    virtual void includeQuiz(void) = 0;
+    virtual void removeSubject(void) = 0;
+    virtual void removeTopic(void) = 0;
+    virtual void removeQuiz(void) = 0;
     virtual void includeStudent(void) = 0;
     virtual void removeStudent(void) = 0;
     virtual void setDownstreamController(InterfaceBLAdmin *) = 0;
@@ -77,6 +84,14 @@ public:
     virtual bool includeStudent(const string &, const string &, const string &, int) = 0;
     virtual std::map<std::string,User*>& getUserBank(void) = 0;
     virtual void removeStudent(User *) = 0;
+    virtual std::map<std::string,Subject*>& getSubjectsBank() = 0;
+    virtual bool includeSubject(const string &) = 0;
+    virtual bool includeTopic(const string &, Subject *) = 0;
+    virtual bool includeQuiz(const string &, std::vector<Question *>, Subject *, Topic *) = 0;
+    virtual void removeSubject(Subject *) = 0;
+    virtual void removeTopic(Topic *, Subject *) = 0;
+    virtual void removeQuiz(Quiz *, Topic *, Subject *) = 0;
+
     virtual void setDownstreamController(StubPR *) = 0;
     virtual ~InterfaceBLAdmin(void) {}
 };
@@ -89,7 +104,7 @@ public:
     virtual ~InterfaceUIQuiz(void) {}
 };
 
-/// Interface do Módulo BL de Admin
+/// Interface do Módulo BL de Quiz
 class InterfaceBLQuiz {
 public:
     virtual void setDownstreamController(StubPR *) = 0;

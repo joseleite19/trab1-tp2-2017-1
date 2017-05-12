@@ -27,6 +27,7 @@ public:
 	void storeSubject(User *, const string &);
 	void deleteSubject(User *, const string &);
 	bool storeUserData(User *);
+    void storeSubjectDB(Subject *);
 	std::map<std::string,User*>& getUserBank();
 	void deleteUser(User *);
 };

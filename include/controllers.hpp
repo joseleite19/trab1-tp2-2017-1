@@ -91,6 +91,13 @@ public:
     void manageStudents();
     void includeStudent();
     void removeStudent();
+    void manageSubjects();
+    void includeSubject();
+    void includeTopic();
+    void includeQuiz();
+    void removeSubject();
+    void removeTopic();
+    void removeQuiz();
     inline void setDownstreamController(InterfaceBLAdmin * controllerBL) { this->controllerBL = controllerBL; }
     ControllerUIAdmin();
     ~ControllerUIAdmin();
@@ -102,7 +109,15 @@ private:
 public:
     bool includeStudent(const string &, const string &, const string &, int);
     std::map<std::string,User*>& getUserBank();
+    std::map<std::string,Subject*>& getSubjectsBank();
     void removeStudent(User *);
+    bool includeSubject(const string &);
+    bool includeTopic(const string &, Subject *);
+    bool includeQuiz(const string &, std::vector<Question *>, Subject *, Topic *);
+    void removeSubject(Subject *);
+    void removeTopic(Topic *, Subject *);
+    void removeQuiz(Quiz *, Topic *, Subject *);
+ 
     inline void setDownstreamController(StubPR * controllerPR) { this->controllerPR = controllerPR; }
     ControllerBLAdmin();
     ~ControllerBLAdmin();

@@ -218,4 +218,6 @@ void StubPR::deleteUser(User * user) {
 	if(users.count(user->getLogin()))users.erase(user->getLogin());
 }
 
-void StubPR::storeSubjectDB(Subject * sub) {}
+void StubPR::storeSubjectDB(Subject * sub) {
+	subjects[sub->getName()]=sub;
+}

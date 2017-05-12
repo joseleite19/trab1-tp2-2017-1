@@ -646,11 +646,9 @@ bool ControllerBLAdmin::includeSubject(const string & name) {
     /// verifica se ja nao existe uma disciplina com o nome 'name' e, caso nao
     /// exista, solicita ao modulo de persistencia o armazenamento de uma nova
     /// disciplina com nome 'name'.
-    std::map<std::string,Subject*> subs = controllerPR->getSubjectsBank();
-    for(auto it:subs){
-        if(name == it.first) return false;
-    }
-    //TODO controllerPR->storeSubjectDB(new Subject(name));
+    std::map<std::string,Subject*>& subs = controllerPR->getSubjectsBank();
+    if(subs.count(name)!=0)return false;
+    controllerPR->storeSubjectDB(new Subject(name));
     return true;
 }
 bool ControllerBLAdmin::includeTopic(const string & name, Subject * sub) {

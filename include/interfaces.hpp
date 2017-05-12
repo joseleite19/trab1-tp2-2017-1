@@ -87,7 +87,7 @@ public:
     virtual std::map<std::string,Subject*>& getSubjectsBank() = 0;
     virtual bool includeSubject(const string &) = 0;
     virtual bool includeTopic(const string &, Subject *) = 0;
-    virtual bool includeQuiz(const string &, std::vector<Question *>, Subject *, Topic *) = 0;
+    virtual bool includeQuiz(const string &, std::vector<Question *>, Topic *) = 0;
     virtual void removeSubject(Subject *) = 0;
     virtual void removeTopic(Topic *, Subject *) = 0;
     virtual void removeQuiz(Quiz *, Topic *, Subject *) = 0;

@@ -113,7 +113,7 @@ public:
     void removeStudent(User *);
     bool includeSubject(const string &);
     bool includeTopic(const string &, Subject *);
-    bool includeQuiz(const string &, std::vector<Question *>, Subject *, Topic *);
+    bool includeQuiz(const string &, std::vector<Question *>, Topic *);
     void removeSubject(Subject *);
     void removeTopic(Topic *, Subject *);
     void removeQuiz(Quiz *, Topic *, Subject *);

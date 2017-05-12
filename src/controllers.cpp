@@ -9,9 +9,11 @@
 #include "controllers.hpp"
 #include "stubPR.hpp"
 
-/// INITIALIZATION
+/// INITIALIZATION MODULE
 
 void ControllerInit::initialize() {
+    /// Esta funcao cria todas os modulos e interfaces e define as relacoes do tipo
+    /// cliente-servidor.
     this->controllerUIAuth  = new ControllerUIAuth();
     this->controllerUIUser  = new ControllerUIUser();
     this->controllerUIAdmin = new ControllerUIAdmin();
@@ -33,6 +35,7 @@ void ControllerInit::initialize() {
 }
 
 ControllerInit::~ControllerInit() {
+    /// Destrutor da classe controladora de inicializacao. Destroi todos os modulos.
     delete controllerUIAuth;
     delete controllerBLAuth;
     delete controllerUIUser;
@@ -45,7 +48,9 @@ ControllerInit::~ControllerInit() {
 }
 
 void ControllerInit::showUI() {
-    
+    /// Esta funcao mostra o menu principal do QuizTime para o usuario, recebe a
+    /// informacao sobre o que o usuario gostaria de fazer e solicita o servico
+    /// requerido a interface adequada.
     int sel = -1;
     while(sel != 0) {
         char buffer[64];
@@ -84,13 +89,16 @@ void ControllerInit::showUI() {
     }
 }
 
-/// AUTHENTICATION
+/// AUTHENTICATION MODULE
 
 ControllerUIAuth::ControllerUIAuth () { }
 ControllerUIAuth::~ControllerUIAuth() { }
 
 User * ControllerUIAuth::requestAuth() {
-
+    /// Esta funcao recebe do usuario as entradas de login e senha e solicita ao
+    /// modulo de lógica de negócio que tente realizar login no sistema com os dados
+    /// fornecidos. Retorna um ponteiro para uma instancia da classe User, caso o
+    /// login seja bem-sucedido, e um ponteiro nulo, caso contrário.
     string login;
     string pass;
 
@@ -108,6 +116,11 @@ ControllerBLAuth::ControllerBLAuth () { }
 ControllerBLAuth::~ControllerBLAuth() { }
 
 User * ControllerBLAuth::authenticate(const string & login, const string & pwd) {
+    /// Esta funcao recebe como parametros um login e uma senha, solicita ao modulo
+    /// de persistencia que retorne do banco de dados um ponteiro para o usuário com
+    /// aquele login e verifica se a senha corresponde a senha do usuario recebido.
+    /// Retorna um ponteiro para o usuário, caso ele esteja no banco de dados e a
+    /// senha corresponda a senha recebida, e um ponteiro nulo, caso contrario.
     User * user = controllerPR->retrieveUser(login);
     if (user != nullptr) {
         if (user->tryLogin(login, pwd)) {
@@ -119,12 +132,15 @@ User * ControllerBLAuth::authenticate(const string & login, const string & pwd) 
     else return nullptr;
 }
 
-/// USER
+/// USER MODULE
 
 ControllerUIUser::ControllerUIUser () { }
 ControllerUIUser::~ControllerUIUser() { }
 
 void ControllerUIUser::manageUserData(User * user) {
+    /// Esta funcao exibe o menu de alteracao das informacoes pessoais do usuario,
+    /// recebe uma solicitacao e chama a funcao adequada para processar a
+    /// solicitacao recebida.
     int sel = -1;
     while(sel != 0) {
         char buffer[64];
@@ -148,6 +164,8 @@ void ControllerUIUser::manageUserData(User * user) {
 }
 
 void ControllerUIUser::manageUserSubjects(User * user) {
+    /// Esta funcao exibe o menu de gerenciamento de disciplinas do usuario, recebe
+    /// uma solicitacao e chama a funcao adequada para processar a solicitacao.
     int sel = -1;
     while(sel != 0) {
         char buffer[64];
@@ -176,6 +194,8 @@ ControllerBLUser::ControllerBLUser  () { }
 ControllerBLUser::~ControllerBLUser () { }
 
 void ControllerUIUser::changeName(User * user) {
+    /// Esta funcao recebe do usuario uma entrada para alteracao de nome e solicita
+    /// ao modulo de logica de negocio que altere o nome do usuario.
     string name;
     string new_name;
     name = user->getName();
@@ -189,12 +209,19 @@ void ControllerUIUser::changeName(User * user) {
 }
 
 bool ControllerBLUser::changeName(User * user, const string & name) {
+    /// Esta funcao recebe como parametros um ponteiro para uma instancia da classe
+    /// Usuario e um nome (string) e solicita ao modulo de persistencia que o nome
+    /// do usuario seja alterado no banco de dados para o nome recebido como
+    /// parametro.
     controllerPR->storeName(user, name);
     user = controllerPR->retrieveUser(user->getLogin());
     return true;
 }
 
 void ControllerUIUser::changePass(User * user) {
+    /// Esta funcao recebe do usuario uma entrada para alteracao de senha, solicita
+    /// ao modulo de logica de negocio que altere a senha do usuario e mostra se a 
+    /// mudanca de senha foi bem-sucedida.
     string pass;
     string new_pass;
     system(CLEAR);
@@ -210,6 +237,11 @@ void ControllerUIUser::changePass(User * user) {
 }
 
 bool ControllerBLUser::changePass(User * user, const string & pass, const string & new_pass) {
+    /// Esta funcao recebe como parametros um ponteiro para uma instancia da classe
+    /// Usuario, a senha atual do usuario e uma nova senha, verifica se a senha
+    /// atual recebida esta correta e, em caso afirmativo, solicita ao modulo de
+    /// persistencia que a senha seja alterada no banco de dados para a nova senha
+    /// recebida como parametro.
     if (user->setPassword(pass, new_pass)) {
         controllerPR->storePass(user, new_pass);
         return true;
@@ -223,6 +255,9 @@ void ControllerUIUser::showSubjects(User * user) {
 }
 
 void ControllerUIUser::includeSubject(User * user) {
+    /// Esta funcao permite ao usuario selecionar uma disciplina na qual ele deseje
+    /// se matricular. É feita a solicitacao de inclusao de disciplina ao modulo de
+    /// logica de negocio e é dado feedback ao usuario.
     std::map <int, string> subs_map;
     int sel = -1;
     int i;
@@ -254,15 +289,22 @@ void ControllerUIUser::includeSubject(User * user) {
 }
 
 std::map<std::string,Subject*>& ControllerBLUser::getSubjectsBank() {
+    /// Esta funcao solicita ao modulo de persistencia que recupere o banco de
+    /// disciplinas cadastradas e retorna o banco recebido.
     return controllerPR->getSubjectsBank();
 }
 
 void ControllerBLUser::includeSubject(User * user, const string & name) {
+    /// Esta funcao solicita ao modulo de persistencia que inclua a disciplina com
+    /// nome name nas disciplinas do usuario user.
     controllerPR->storeSubject(user, name);
-    user = controllerPR->retrieveUser(user->getLogin());
 }
 
 void ControllerUIUser::removeSubject(User * user) {
+    /// Esta funcao solicida ao modulo de logica de negocio a lista das disciplinas
+    /// cadastradas, mostra um menu ao usuario para que ele selecione uma disciplina
+    /// para trancamento e solicita ao módulo de logica de negocio que realize a
+    /// remocao da disciplina selecionada.
     std::vector<Subject> subjects;
     std::map <int, string> subs_map;
     int sel = -1;
@@ -291,16 +333,19 @@ void ControllerUIUser::removeSubject(User * user) {
 } 
 
 void ControllerBLUser::removeSubject(User * user, const string & name) {
+    /// Esta funcao recebe como parametro um usuario e o nome de uma disciplina e
+    /// solicita ao modulo de persistencia de a disciplina seja removida do usuario.
     controllerPR->deleteSubject(user, name);
-    user = controllerPR->retrieveUser(user->getLogin());
 }
 
-// ADMINISTRATOR
+// ADMINISTRATOR MODULE
 
 ControllerUIAdmin::ControllerUIAdmin () { }
 ControllerUIAdmin::~ControllerUIAdmin() { }
 
 void ControllerUIAdmin::manageStudents() {
+    /// Esta funcao exibe um menu para que o usuario selecione a acao desejada. Após
+    /// a selecao, é chamada a funcao adequada para realizacao da acao desejada.
     int sel = -1;
     while(sel != 0) {
         char buffer[64];
@@ -324,6 +369,9 @@ void ControllerUIAdmin::manageStudents() {
 }
 
 void ControllerUIAdmin::includeStudent() {
+    /// Esta funcao permite ao usuario dar entrada nos dados de cadastro de um novo
+    /// aluno, solicita ao modulo de logica de negocio que um usuario com as
+    /// informacoes recebidas seja cadastrado e prove feedback do cadastramento.
     string name, login, pass, adm;
     system(CLEAR);
     printf("QuizTime - Cadastro de Aluno\n\n");
@@ -350,12 +398,19 @@ ControllerBLAdmin::ControllerBLAdmin () { }
 ControllerBLAdmin::~ControllerBLAdmin() { }
 
 bool ControllerBLAdmin::includeStudent(const string& name, const string& login, const string& pass, int adm) {
+    /// Esta funcao cria recebe como parametros um nome, um login, uma senha e um
+    /// status (bool) de admin ou user, cria um novo usuario com os parametros
+    /// recebidos e solicita ao modulo de persistencia que os dados do usuario
+    /// criado sejam registrados no banco de dados.
     User * user = new User(name, login, pass, adm);
     if(controllerPR->storeUserData(user)) return true;
     return false;
 }
 
 void ControllerUIAdmin::removeStudent() {
+    /// Esta funcao solicita ao modulo de logica de negocio o banco de dados de
+    /// usuarios, exibe um menu para que o administrador possa selecionar um usuario
+    /// para ser removido e solicita a remocao do usuario selecionado.
     std::map <int, User*> user_map;
     int sel = -1;
     int i;
@@ -385,14 +440,21 @@ void ControllerUIAdmin::removeStudent() {
 }
 
 void ControllerBLAdmin::removeStudent(User * user) {
+    /// Esta funcao solicita ao modulo de persistencia que remova o usuario user do
+    /// banco de dados.
     controllerPR->deleteUser(user);
 }
 
 std::map<std::string,User*>& ControllerBLAdmin::getUserBank() {
+    /// Esta funcao solicita ao modulo de persistencia o banco de usuarios e retorna
+    /// a estrutura recebida.
     return controllerPR->getUserBank();
 }
 
 void ControllerUIAdmin::manageSubjects() {
+    /// Esta funcao exibe um menu para que o usuario possa solicitar uma acao
+    /// relacionada ao gerenciamento de disciplinas e chama a funcao adequada para
+    /// realizacao da acao solicitada.
     int sel = -1;
     while(sel != 0) {
         char buffer[64];
@@ -424,6 +486,10 @@ void ControllerUIAdmin::manageSubjects() {
 }
 
 void ControllerUIAdmin::includeSubject() {
+    /// Esta funcao permite ao administrador dar entrada no nome de uma nova
+    /// disciplina para cadastro, solicita ao modulo de lógica de negócio o
+    /// cadastramento de uma nova disciplina com o nome fornecido e prove feedback
+    /// ao usuario.
     string name;
     system(CLEAR);
     printf("QuizTime - Cadastro de Disciplina\n\n");
@@ -438,6 +504,11 @@ void ControllerUIAdmin::includeSubject() {
     }
 }
 void ControllerUIAdmin::includeTopic() {
+    /// Esta funcao solicita ao modulo de logica de negocio o banco de disciplinas,
+    /// exibe um menu para que o usuario selecione uma disciplina na qual deseja
+    /// incluir um novo topico e recebe o nome para um novo topico. Em seguida,
+    /// solicita ao modulo de logica de negocio o cadastramento do novo topico e
+    /// prove feedback para o usuario.
     std::map <int, Subject*> subs_map;
     string name;
     int sel = -1;
@@ -482,6 +553,11 @@ void ControllerUIAdmin::includeTopic() {
 }
 
 void ControllerUIAdmin::includeQuiz() {
+    /// Esta funcao solicita ao modulo de logica de negocio o banco de disciplinas,
+    /// exibe um menu para que o usuario selecione uma disciplina e um topico, no
+    /// qual deseja incluir um novo quiz e recebe o nome e as perguntas para o novo
+    /// quiz. Em seguida, solicita ao modulo de logica de negocio o cadastramento do
+    /// novo quiz e prove feedback para o usuario.
     std::vector<Topic> topics;
     std::map <int, Subject*> subs_map;
     std::map <int, Topic*> tops_map;
@@ -497,7 +573,7 @@ void ControllerUIAdmin::includeQuiz() {
         i = 1;
         for(auto it:controllerBL->getSubjectsBank()){
             Subject *sub=it.second;
-            printf("%d. %s\n", i, it.first.c_str()/*username*/);
+            printf("%d. %s\n", i, it.first.c_str());
             subs_map[i] = sub;
             i++;
         }
@@ -542,7 +618,7 @@ void ControllerUIAdmin::includeQuiz() {
                         questions.push_back(new Question(quest, ans));
                     }
 
-                    if(!controllerBL->includeQuiz(name, questions, subs_map[sel1], tops_map[sel2])){
+                    if(!controllerBL->includeQuiz(name, questions, tops_map[sel2])){
                         printf("\nErro: topico já cadastrado.\n");
                         getchar();
                     } else {
@@ -566,25 +642,36 @@ void ControllerUIAdmin::includeQuiz() {
 }
 
 std::map<std::string,Subject*>& ControllerBLAdmin::getSubjectsBank() {
+    /// Esta funcao solicita ao modulo de persistencia o banco de disciplinas e
+    /// retorna a estrutura recebida.
     return controllerPR->getSubjectsBank();
 }
+
 bool ControllerBLAdmin::includeSubject(const string & name) {
+    /// Esta funcao solicita ao modulo de persistencia o banco de disciplinas,
+    /// verifica se ja nao existe uma disciplina com o nome 'name' e, caso nao
+    /// exista, solicita ao modulo de persistencia o armazenamento de uma nova
+    /// disciplina com nome 'name'.
     std::map<std::string,Subject*> subs = controllerPR->getSubjectsBank();
     for(auto it:subs){
         if(name == it.first) return false;
     }
-    //controllerPR->storeSubjectDB(new Subject(name));
+    //TODO controllerPR->storeSubjectDB(new Subject(name));
     return true;
 }
 bool ControllerBLAdmin::includeTopic(const string & name, Subject * sub) {
+    /// Esta funcao verifica se ja nao existe um topico com o nome 'name' na
+    /// disciplina sub e, caso nao exista, adiciona o novo topico.
     for(auto it:sub->getTopics()){
         if(name == it.getName()) return false;
     }
     sub->addTopic(Topic(name));
-    //controllerPR->storeSubjectDB(sub); 
     return true;
 }
-bool ControllerBLAdmin::includeQuiz(const string & name, std::vector<Question*> questions, Subject * sub, Topic * top) {
+bool ControllerBLAdmin::includeQuiz(const string & name, std::vector<Question*> questions, Topic * top) {
+    /// Esta funcao verifica se ja nao existe um quiz com o nome 'name' no topico
+    /// top e, caso nao exista, cria um novo quiz com nome 'name' e com as questoes
+    /// do vetor questions.
     for(auto it:top->getQuizes()){
         if(name == it.getname()) return false;
     }
@@ -593,7 +680,6 @@ bool ControllerBLAdmin::includeQuiz(const string & name, std::vector<Question*> 
         quiz.addQuestion(*questions[i]);
     }
     top->addQuiz(quiz);
-    //controllerPR->storeSubjectDB(sub);
     return true;
 }
 
@@ -605,7 +691,7 @@ void ControllerBLAdmin::removeSubject(Subject * sub) {}
 void ControllerBLAdmin::removeTopic(Topic * top, Subject * sub) {}
 void ControllerBLAdmin::removeQuiz(Quiz * quiz, Topic * top, Subject * sub) {}
 
-/// QUIZ
+/// QUIZ MODULE
 
 ControllerUIQuiz::ControllerUIQuiz () { }
 ControllerUIQuiz::~ControllerUIQuiz() { }
@@ -614,6 +700,10 @@ ControllerBLQuiz::ControllerBLQuiz () { }
 ControllerBLQuiz::~ControllerBLQuiz() { }
 
 void ControllerUIQuiz::answerQuiz(User * user) {
+    /// Esta funcao solicita ao modulo de logica de negocio a lista das disciplinas
+    /// existentes, exibe um menu para que o usuario selecione uma disciplina, um
+    /// topico e, entao, um quiz para responder. O metodo run() do quiz selecionado
+    /// é chamado e o usuario recebe um feedback do seu desempenho no quiz.  
     std::vector<Subject> subjects;
     std::map <int, Subject*> subs_map;
     std::vector<Topic> topics;

@@ -210,11 +210,8 @@ void ControllerUIUser::changeName(User * user) {
 
 bool ControllerBLUser::changeName(User * user, const string & name) {
     /// Esta funcao recebe como parametros um ponteiro para uma instancia da classe
-    /// Usuario e um nome (string) e solicita ao modulo de persistencia que o nome
-    /// do usuario seja alterado no banco de dados para o nome recebido como
-    /// parametro.
-    controllerPR->storeName(user, name);
-    user = controllerPR->retrieveUser(user->getLogin());
+    /// Usuario e um nome (string) e modifica o nome do usuario para o nome recebido.
+    user->setName(name);
     return true;
 }
 
@@ -239,11 +236,8 @@ void ControllerUIUser::changePass(User * user) {
 bool ControllerBLUser::changePass(User * user, const string & pass, const string & new_pass) {
     /// Esta funcao recebe como parametros um ponteiro para uma instancia da classe
     /// Usuario, a senha atual do usuario e uma nova senha, verifica se a senha
-    /// atual recebida esta correta e, em caso afirmativo, solicita ao modulo de
-    /// persistencia que a senha seja alterada no banco de dados para a nova senha
-    /// recebida como parametro.
+    /// atual recebida esta correta e, em caso afirmativo, altera a senha.
     if (user->setPassword(pass, new_pass)) {
-        controllerPR->storePass(user, new_pass);
         return true;
     }
     else return false;
@@ -334,8 +328,8 @@ void ControllerUIUser::removeSubject(User * user) {
 
 void ControllerBLUser::removeSubject(User * user, const string & name) {
     /// Esta funcao recebe como parametro um usuario e o nome de uma disciplina e
-    /// solicita ao modulo de persistencia de a disciplina seja removida do usuario.
-    controllerPR->deleteSubject(user, name);
+    /// remove a disciplina do usuario.
+    user->removeSubject(name);
 }
 
 // ADMINISTRATOR MODULE

@@ -3,6 +3,12 @@
 #include <vector>
 #include "helper.hpp"
 
+#ifdef _WIN32
+    #define CLEAR "cls"
+#else
+    #define CLEAR "clear"
+#endif
+
 Quiz::Quiz(const std::string & name){
     this->name = name;
 }
@@ -24,26 +30,35 @@ void Quiz::addQuestion(Question question) {
 }
 
 void Quiz::run(int user_id) const{
-	std::queue<int> id = randompermutationQ(questions.size());
 
-	int qnt_resp_certas = 0;
+	int pts = 0;
+    char ans;
+    char buffer[64];
 
-	for(int i=id.front();!id.empty();id.pop()){
+	for(int i=1; i<10; i++){
+        system(CLEAR);
+        printf("Questao %d: ", i);
 		questions[i].show();
-
+        printf("\n1. Responder\n");
+        printf("0. Pular\n");
 		// menu: 1 = responder; 0 = pular; -1 = sair
-
-		int op = readIntInRange(-1, 1);
-		if(op == 0) id.push(i);
-		else if(op == -1){
-			// msg: voce escolheu sair do quiz
-			return;
-		}
+        printf("Selecione a opcao desejada: ");
+		int op = readIntInRange(0, 1);
+		if(op == 0) i = i;
 		else{
-			char c = readchar();
-			if(c == questions[i].getresp()) qnt_resp_certas++;
+            ans = 'O';
+            printf("Resposta: ");
+            while(ans != 'V' && ans != 'F') {
+                fgets(buffer, sizeof(buffer), stdin);
+                sscanf(buffer, "%c", &ans);
+            }
+			if(ans == questions[i].getresp()) pts++;
 		}
 	}
+    system(CLEAR);
+    printf("\nQuantidade de respostas corretas: %d\n", pts);
+    getchar();
+    getchar();
 
 	// aqui a pessoa terminou de fazer o Quiz
 

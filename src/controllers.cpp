@@ -759,6 +759,7 @@ void ControllerUIQuiz::answerQuiz(User * user) {
 
                         if(sel3 != 0 && sel3 < i) {
                             quizzes_map[sel3]->run(10);
+                            break;
                         } else {
                             if(sel3 != 0) {
                                 printf("Selecao invalida.\n");

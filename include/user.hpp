@@ -8,6 +8,8 @@
 #include "quiz.hpp"
 using namespace std;
 
+using uint=unsigned int;
+
 class User{
 private:
 	string name, login, password;

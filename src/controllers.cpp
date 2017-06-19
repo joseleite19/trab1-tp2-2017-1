@@ -22,7 +22,7 @@ void ControllerInit::initialize() {
     this->controllerBLUser  = new ControllerBLUser();
     this->controllerBLAdmin = new ControllerBLAdmin();
     this->controllerBLQuiz  = new ControllerBLQuiz();
- 
+
     this->controllerPR      = new StubPR();
     this->controllerUIAuth ->setDownstreamController(controllerBLAuth);
     this->controllerUIUser ->setDownstreamController(controllerBLUser);
@@ -56,7 +56,7 @@ void ControllerInit::showUI() {
         char buffer[64];
         system(CLEAR);
         printf("QuizTime - Menu principal\n\n");
-        
+
         if(user == nullptr) {
             printf("1. Fazer log-in\n");
         } else {
@@ -156,7 +156,7 @@ void ControllerUIUser::manageUserData(User * user) {
         sscanf(buffer, "%d", &sel);
 
         switch(sel) {
-            case 1: changeName(user); sel = -1; break; 
+            case 1: changeName(user); sel = -1; break;
             case 2: changePass(user); sel = -1; break;
             default: break;
         }
@@ -217,7 +217,7 @@ bool ControllerBLUser::changeName(User * user, const string & name) {
 
 void ControllerUIUser::changePass(User * user) {
     /// Esta funcao recebe do usuario uma entrada para alteracao de senha, solicita
-    /// ao modulo de logica de negocio que altere a senha do usuario e mostra se a 
+    /// ao modulo de logica de negocio que altere a senha do usuario e mostra se a
     /// mudanca de senha foi bem-sucedida.
     string pass;
     string new_pass;
@@ -279,7 +279,7 @@ void ControllerUIUser::includeSubject(User * user) {
         if(sel != 0 && sel < i) {
             controllerBL->includeSubject(user, subs_map[sel]);
         }
-    } 
+    }
 }
 
 std::map<std::string,Subject*>& ControllerBLUser::getSubjectsBank() {
@@ -324,7 +324,7 @@ void ControllerUIUser::removeSubject(User * user) {
             controllerBL->removeSubject(user, subs_map[sel]);
         }
     }
-} 
+}
 
 void ControllerBLUser::removeSubject(User * user, const string & name) {
     /// Esta funcao recebe como parametro um usuario e o nome de uma disciplina e
@@ -558,6 +558,8 @@ void ControllerUIAdmin::includeQuiz() {
     std::vector<Question*> questions;
     string name, quest;
     char ans;
+    char ans_pontuacao;
+    int pontuacao = 1;
     int sel1 = -1, sel2 = -1;
     int i;
     while(sel1 != 0) {
@@ -607,9 +609,16 @@ void ControllerUIAdmin::includeQuiz() {
                         while(ans != 'V' && ans != 'F') {
                             printf("Resposta (V/F): ");
                             fgets(buffer, sizeof(buffer), stdin);
-                            sscanf(buffer, "%c", &ans); 
+                            sscanf(buffer, "%c", &ans);
                         }
-                        questions.push_back(new Question(quest, ans));
+                        printf("Deseja cadastrar pontuacao? (S/N)");
+                        scanf("%c", &ans_pontuacao);
+                        while(getchar() != '\n');
+                        if(ans_pontuacao == 'S') {
+                            printf("Digite a pontuacao (1 a 10): ");
+                            scanf("%d", &pontuacao);
+                        }
+                        questions.push_back(new Question(quest, ans, pontuacao));
                     }
 
                     if(!controllerBL->includeQuiz(name, questions, tops_map[sel2])){
@@ -695,7 +704,7 @@ void ControllerUIQuiz::answerQuiz(User * user) {
     /// Esta funcao solicita ao modulo de logica de negocio a lista das disciplinas
     /// existentes, exibe um menu para que o usuario selecione uma disciplina, um
     /// topico e, entao, um quiz para responder. O metodo run() do quiz selecionado
-    /// é chamado e o usuario recebe um feedback do seu desempenho no quiz.  
+    /// é chamado e o usuario recebe um feedback do seu desempenho no quiz.
     std::vector<Subject> subjects;
     std::map <int, Subject*> subs_map;
     std::vector<Topic> topics;
@@ -772,13 +781,13 @@ void ControllerUIQuiz::answerQuiz(User * user) {
                         printf("Selecao invalida.\n");
                         getchar();
                     }
-                }      
-            }            
+                }
+            }
         } else {
             if(sel1 != 0) {
                 printf("Selecao invalida.\n");
                 getchar ();
             }
         }
-    } 
+    }
 }

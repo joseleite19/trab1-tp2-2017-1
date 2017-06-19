@@ -95,7 +95,7 @@ void StubPR::loadSubjects(string fileName){
 			lineStream.ignore(256,'\\');
 			subject=new Subject(name);
 			subjects[name]=subject;
-			
+
 			for(int i=0;i<countTopics;i++){
 				std::getline(file,line);
 				lineStream.str(line);
@@ -122,7 +122,7 @@ void StubPR::loadSubjects(string fileName){
 						lineStream >> isTrue;
 						lineStream.ignore(256,'\\');
 
-						question=new Question(name,isTrue);
+						question=new Question(name,isTrue, 1);
 						quiz->addQuestion(*question);
 						delete question;
 

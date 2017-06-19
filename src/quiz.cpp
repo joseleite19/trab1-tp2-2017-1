@@ -52,7 +52,8 @@ void Quiz::run(int user_id) const{
                 fgets(buffer, sizeof(buffer), stdin);
                 sscanf(buffer, "%c", &ans);
             }
-			if(ans == questions[i].getresp()) pts++;
+			if(ans == questions[i].getresp())
+                pts += questions[i].getPontuacao();
 		}
 	}
     system(CLEAR);

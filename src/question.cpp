@@ -1,6 +1,8 @@
 #include "question.hpp"
 
-Question::Question(const std::string& text, const char resp): text(text), resp(resp) {}
+Question::Question(const std::string& text, const char resp, int pontuacao): text(text), resp(resp), pontuacao(pontuacao) {
+
+}
 
 Question::~Question(){
 
@@ -12,6 +14,10 @@ void Question::show() const{
 
 char Question::getresp() const{
 	return resp;
+}
+
+int Question::getPontuacao() const {
+    return pontuacao;
 }
 
 const std::string& Question::getText() const{

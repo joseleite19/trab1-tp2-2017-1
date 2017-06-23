@@ -1,3 +1,11 @@
+/**
+/*
+*   @author AngelicCoder
+*   @since 08/05/2017
+*   @version 2.0
+*/
+
+
 #include "topic.hpp"
 #include <vector>
 #include "helper.hpp"
@@ -23,7 +31,13 @@ void Topic::addQuiz(Quiz quiz) {
     this->quizzes.push_back(quiz);
 }
 
-void Topic::showQuizzes(int user_id) const{
+/**
+*   Função que mostra os quizzes de um determinado tópico de uma disciplina.
+*   @param um inteiro que representa o id do usuário.
+*   @see    quiz.run()
+*   @return vazio.
+*/
+void Topic::showQuizzes(int user_id) const {
     std::vector<int> id = randompermutation(quizzes.size());
 
     for(int i:id)quizzes[i].run(user_id);

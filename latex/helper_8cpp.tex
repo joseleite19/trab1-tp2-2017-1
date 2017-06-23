@@ -1,0 +1,128 @@
+\hypertarget{helper_8cpp}{}\section{helper.\+cpp File Reference}
+\label{helper_8cpp}\index{helper.\+cpp@{helper.\+cpp}}
+{\ttfamily \#include \char`\"{}helper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ int $>$ \hyperlink{helper_8cpp_aff8265ecd56d0f933b5d78cefd93ff32}{randompermutation} (int size)
+\begin{DoxyCompactList}\small\item\em /$\ast$ \end{DoxyCompactList}\item 
+std\+::queue$<$ int $>$ \hyperlink{helper_8cpp_a0bbe636bfe707cc196c9eadbca4416c7}{randompermutationQ} (int size)
+\item 
+int \hyperlink{helper_8cpp_a4d580e96dfaa8723fedadc161627fac1}{read\+Int\+In\+Range} (int L, int R)
+\begin{DoxyCompactList}\small\item\em Função para verificar se um inteiro lido do teclado está em um range (intervalo) válido. \end{DoxyCompactList}\item 
+bool \hyperlink{helper_8cpp_a056f915ac39307039d2855e9afd1dcf2}{is\+Alpha\+Numerical} (char c)
+\begin{DoxyCompactList}\small\item\em Função para verificar se um caractere lido do teclado é alfanumérico, usando a tabela A\+S\+C\+II. \end{DoxyCompactList}\item 
+char \hyperlink{helper_8cpp_a831a2329c820ba9b9b378131ed143ff5}{readchar} ()
+\begin{DoxyCompactList}\small\item\em Funçao que le um caractere ret do teclado enquanto o caractere ret lido não é alfanumerico. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{helper_8cpp_a056f915ac39307039d2855e9afd1dcf2}\label{helper_8cpp_a056f915ac39307039d2855e9afd1dcf2}} 
+\index{helper.\+cpp@{helper.\+cpp}!is\+Alpha\+Numerical@{is\+Alpha\+Numerical}}
+\index{is\+Alpha\+Numerical@{is\+Alpha\+Numerical}!helper.\+cpp@{helper.\+cpp}}
+\subsubsection{\texorpdfstring{is\+Alpha\+Numerical()}{isAlphaNumerical()}}
+{\footnotesize\ttfamily bool is\+Alpha\+Numerical (\begin{DoxyParamCaption}\item[{char}]{ }\end{DoxyParamCaption})}
+
+
+
+Função para verificar se um caractere lido do teclado é alfanumérico, usando a tabela A\+S\+C\+II. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em um} & char. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+um booleano indicando se o caractere é alfanumérico ou não. 
+\end{DoxyReturn}
+
+
+Definition at line 38 of file helper.\+cpp.
+
+\mbox{\Hypertarget{helper_8cpp_aff8265ecd56d0f933b5d78cefd93ff32}\label{helper_8cpp_aff8265ecd56d0f933b5d78cefd93ff32}} 
+\index{helper.\+cpp@{helper.\+cpp}!randompermutation@{randompermutation}}
+\index{randompermutation@{randompermutation}!helper.\+cpp@{helper.\+cpp}}
+\subsubsection{\texorpdfstring{randompermutation()}{randompermutation()}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ randompermutation (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+/$\ast$ 
+
+Arquivo contendo funcoes que servem de auxilio para \hyperlink{topic_8cpp}{topic.\+cpp}, \hyperlink{subject_8cpp}{subject.\+cpp}, \hyperlink{user_8cpp}{user.\+cpp}, \hyperlink{helper_8cpp}{helper.\+cpp}, \hyperlink{controllers_8cpp}{controllers.\+cpp}.
+
+\begin{DoxyAuthor}{Author}
+joseleite19 
+\end{DoxyAuthor}
+\begin{DoxySince}{Since}
+07/05/2017 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+3.\+0 
+\end{DoxyVersion}
+
+
+Definition at line 16 of file helper.\+cpp.
+
+\mbox{\Hypertarget{helper_8cpp_a0bbe636bfe707cc196c9eadbca4416c7}\label{helper_8cpp_a0bbe636bfe707cc196c9eadbca4416c7}} 
+\index{helper.\+cpp@{helper.\+cpp}!randompermutationQ@{randompermutationQ}}
+\index{randompermutationQ@{randompermutationQ}!helper.\+cpp@{helper.\+cpp}}
+\subsubsection{\texorpdfstring{randompermutation\+Q()}{randompermutationQ()}}
+{\footnotesize\ttfamily std\+::queue$<$int$>$ randompermutationQ (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file helper.\+cpp.
+
+\mbox{\Hypertarget{helper_8cpp_a831a2329c820ba9b9b378131ed143ff5}\label{helper_8cpp_a831a2329c820ba9b9b378131ed143ff5}} 
+\index{helper.\+cpp@{helper.\+cpp}!readchar@{readchar}}
+\index{readchar@{readchar}!helper.\+cpp@{helper.\+cpp}}
+\subsubsection{\texorpdfstring{readchar()}{readchar()}}
+{\footnotesize\ttfamily char readchar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Funçao que le um caractere ret do teclado enquanto o caractere ret lido não é alfanumerico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em não} & há. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{helper_8hpp_a2a6ec05797a0335af4c07553282cc302}{is\+Alpha\+Numerical()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+o caractere ret. 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file helper.\+cpp.
+
+\mbox{\Hypertarget{helper_8cpp_a4d580e96dfaa8723fedadc161627fac1}\label{helper_8cpp_a4d580e96dfaa8723fedadc161627fac1}} 
+\index{helper.\+cpp@{helper.\+cpp}!read\+Int\+In\+Range@{read\+Int\+In\+Range}}
+\index{read\+Int\+In\+Range@{read\+Int\+In\+Range}!helper.\+cpp@{helper.\+cpp}}
+\subsubsection{\texorpdfstring{read\+Int\+In\+Range()}{readIntInRange()}}
+{\footnotesize\ttfamily int read\+Int\+In\+Range (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+Função para verificar se um inteiro lido do teclado está em um range (intervalo) válido. 
+
+Será lido do teclado o inteiro e depois vamos continuar lendo até que o inteiro esteja no range válido. 
+\begin{DoxyParams}{Parameters}
+{\em um} & inteiro L e R que representa o range. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+um inteiro. 
+\end{DoxyReturn}
+
+
+Definition at line 28 of file helper.\+cpp.
+

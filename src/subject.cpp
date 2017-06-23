@@ -1,3 +1,10 @@
+/**
+/*
+*   @author AngelicCoder
+*   @since 08/05/2017
+*   @version 2.0
+*/
+
 #include "subject.hpp"
 #include <vector>
 #include <string>

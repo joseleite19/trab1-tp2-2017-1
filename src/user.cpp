@@ -1,3 +1,10 @@
+/**
+/*
+*   @author joseleite19
+*   @since 07/05/2017
+*   @version 3.0
+*/
+
 #include "user.hpp"
 #include <string>
 #include <vector>
@@ -11,7 +18,7 @@ User::User(const string& name, const string& login, const string& pass,
 	 const bool& admin) : name(name), login(login), password(pass), admin(admin){ }
 
 User::~User() { }
-	
+
 string User::getName() const{
 	return this->name;
 }

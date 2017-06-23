@@ -1,3 +1,12 @@
+/**
+*   Classe da interface.
+*   Interface padrao contendo as funcoes puramente virtuais a ser implementada por cada um dos modulos (controllers.hpp).
+*   @author cftpontes
+*   @since 09/05/2017
+*   @version 3.0
+*/
+
+
 #ifndef INTERFACES_H
 #define INTERFACES_H
 
@@ -19,7 +28,7 @@ class InterfaceBLAdmin;
 class InterfaceBLQuiz;
 class StubPR;
 
-/// Interface do Módulo UI de Autenticação
+/// Interface do Modulo UI de Autenticacao
 class InterfaceUIAuth {
 public:
     virtual User * requestAuth (void) = 0;
@@ -27,7 +36,7 @@ public:
     virtual ~InterfaceUIAuth(void) {}
 };
 
-/// Interface do Módulo BL de Autenticação
+/// Interface do Modulo BL de Autenticacao
 class InterfaceBLAuth {
 public:
     virtual User * authenticate(const string &, const string &) = 0;
@@ -35,7 +44,7 @@ public:
     virtual ~InterfaceBLAuth(void) {}
 };
 
-/// Interface do Módulo UI de Usuário
+/// Interface do Modulo UI de Usuario
 class InterfaceUIUser {
 public:
     virtual void manageUserData (User*) = 0;
@@ -49,7 +58,7 @@ public:
     virtual ~InterfaceUIUser(void) {}
 };
 
-/// Interface do Módulo BL de Usuário
+/// Interface do Modulo BL de Usuario
 class InterfaceBLUser {
 public:
     virtual bool changeName(User *, const string &) = 0;
@@ -61,7 +70,7 @@ public:
     virtual ~InterfaceBLUser(void) {}
 };
 
-/// Interface do Módulo UI de Admin
+/// Interface do Modulo UI de Admin
 class InterfaceUIAdmin {
 public:
     virtual void manageStudents(void) = 0;
@@ -78,7 +87,7 @@ public:
     virtual ~InterfaceUIAdmin(void) {}
 };
 
-/// Interface do Módulo BL de Admin
+/// Interface do Modulo BL de Admin
 class InterfaceBLAdmin {
 public:
     virtual bool includeStudent(const string &, const string &, const string &, int) = 0;
@@ -96,7 +105,7 @@ public:
     virtual ~InterfaceBLAdmin(void) {}
 };
 
-/// Interface do Módulo UI de Quiz
+/// Interface do Modulo UI de Quiz
 class InterfaceUIQuiz {
 public:
     virtual void (answerQuiz(User *)) = 0;
@@ -104,7 +113,7 @@ public:
     virtual ~InterfaceUIQuiz(void) {}
 };
 
-/// Interface do Módulo BL de Quiz
+/// Interface do Modulo BL de Quiz
 class InterfaceBLQuiz {
 public:
     virtual void setDownstreamController(StubPR *) = 0;

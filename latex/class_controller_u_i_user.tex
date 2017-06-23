@@ -1,0 +1,193 @@
+\hypertarget{class_controller_u_i_user}{}\section{Controller\+U\+I\+User Class Reference}
+\label{class_controller_u_i_user}\index{Controller\+U\+I\+User@{Controller\+U\+I\+User}}
+
+
+U\+S\+ER.  
+
+
+
+
+{\ttfamily \#include $<$controllers.\+hpp$>$}
+
+
+
+Inherits \hyperlink{class_interface_u_i_user}{Interface\+U\+I\+User}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_controller_u_i_user_a3d496ebc4d35be9d001c543ccc605341}{manage\+User\+Data} (\hyperlink{class_user}{User} $\ast$)
+\item 
+void \hyperlink{class_controller_u_i_user_a6a3a889cc4726487baa3e2f19f646810}{manage\+User\+Subjects} (\hyperlink{class_user}{User} $\ast$)
+\item 
+void \hyperlink{class_controller_u_i_user_a294982fc334de0b9a520823ff05b545e}{change\+Name} (\hyperlink{class_user}{User} $\ast$)
+\item 
+void \hyperlink{class_controller_u_i_user_a769122f009fe45b3c9f4f63afe5c043e}{change\+Pass} (\hyperlink{class_user}{User} $\ast$)
+\item 
+void \hyperlink{class_controller_u_i_user_a98a0e51ff5b82264bdda2683e5b19e36}{show\+Subjects} (\hyperlink{class_user}{User} $\ast$)
+\item 
+void \hyperlink{class_controller_u_i_user_a9bf2ce224d3d3064542c89a287cb93ca}{include\+Subject} (\hyperlink{class_user}{User} $\ast$)
+\item 
+void \hyperlink{class_controller_u_i_user_a6ec069819ab7fe85b8419ee00714b8a3}{remove\+Subject} (\hyperlink{class_user}{User} $\ast$)
+\item 
+void \hyperlink{class_controller_u_i_user_ad4ad2668cd963c5fa733bb8988268d99}{set\+Downstream\+Controller} (\hyperlink{class_interface_b_l_user}{Interface\+B\+L\+User} $\ast$controller\+BL)
+\item 
+\hyperlink{class_controller_u_i_user_a1bc1cdf0a434adb9211341ddaea89cbd}{$\sim$\+Controller\+U\+I\+User} (void)
+\item 
+\hyperlink{class_controller_u_i_user_a84d2a2ab0a27ce9c81dad0b1ba020492}{Controller\+U\+I\+User} (void)
+\begin{DoxyCompactList}\small\item\em U\+S\+ER M\+O\+D\+U\+LE. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+U\+S\+ER. 
+
+Definition at line 64 of file controllers.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_controller_u_i_user_a1bc1cdf0a434adb9211341ddaea89cbd}\label{class_controller_u_i_user_a1bc1cdf0a434adb9211341ddaea89cbd}} 
+\index{Controller\+U\+I\+User@{Controller\+U\+I\+User}!````~Controller\+U\+I\+User@{$\sim$\+Controller\+U\+I\+User}}
+\index{````~Controller\+U\+I\+User@{$\sim$\+Controller\+U\+I\+User}!Controller\+U\+I\+User@{Controller\+U\+I\+User}}
+\subsubsection{\texorpdfstring{$\sim$\+Controller\+U\+I\+User()}{~ControllerUIUser()}}
+{\footnotesize\ttfamily Controller\+U\+I\+User\+::$\sim$\+Controller\+U\+I\+User (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 146 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_u_i_user_a84d2a2ab0a27ce9c81dad0b1ba020492}\label{class_controller_u_i_user_a84d2a2ab0a27ce9c81dad0b1ba020492}} 
+\index{Controller\+U\+I\+User@{Controller\+U\+I\+User}!Controller\+U\+I\+User@{Controller\+U\+I\+User}}
+\index{Controller\+U\+I\+User@{Controller\+U\+I\+User}!Controller\+U\+I\+User@{Controller\+U\+I\+User}}
+\subsubsection{\texorpdfstring{Controller\+U\+I\+User()}{ControllerUIUser()}}
+{\footnotesize\ttfamily Controller\+U\+I\+User\+::\+Controller\+U\+I\+User (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+U\+S\+ER M\+O\+D\+U\+LE. 
+
+
+
+Definition at line 145 of file controllers.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_controller_u_i_user_a294982fc334de0b9a520823ff05b545e}\label{class_controller_u_i_user_a294982fc334de0b9a520823ff05b545e}} 
+\index{Controller\+U\+I\+User@{Controller\+U\+I\+User}!change\+Name@{change\+Name}}
+\index{change\+Name@{change\+Name}!Controller\+U\+I\+User@{Controller\+U\+I\+User}}
+\subsubsection{\texorpdfstring{change\+Name()}{changeName()}}
+{\footnotesize\ttfamily void Controller\+U\+I\+User\+::change\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{class_user}{User} $\ast$}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao recebe do usuario uma entrada para alteracao de nome e solicita ao modulo de logica de negocio que altere o nome do usuario. 
+
+Implements \hyperlink{class_interface_u_i_user_a2d8e9c81dabab905f06eacdc474d928d}{Interface\+U\+I\+User}.
+
+
+
+Definition at line 204 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_u_i_user_a769122f009fe45b3c9f4f63afe5c043e}\label{class_controller_u_i_user_a769122f009fe45b3c9f4f63afe5c043e}} 
+\index{Controller\+U\+I\+User@{Controller\+U\+I\+User}!change\+Pass@{change\+Pass}}
+\index{change\+Pass@{change\+Pass}!Controller\+U\+I\+User@{Controller\+U\+I\+User}}
+\subsubsection{\texorpdfstring{change\+Pass()}{changePass()}}
+{\footnotesize\ttfamily void Controller\+U\+I\+User\+::change\+Pass (\begin{DoxyParamCaption}\item[{\hyperlink{class_user}{User} $\ast$}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao recebe do usuario uma entrada para alteracao de senha, solicita ao modulo de logica de negocio que altere a senha do usuario e mostra se a mudanca de senha foi bem-\/sucedida. 
+
+Implements \hyperlink{class_interface_u_i_user_a56170420b7ce8f3a69c1097aa4fb19d7}{Interface\+U\+I\+User}.
+
+
+
+Definition at line 226 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_u_i_user_a9bf2ce224d3d3064542c89a287cb93ca}\label{class_controller_u_i_user_a9bf2ce224d3d3064542c89a287cb93ca}} 
+\index{Controller\+U\+I\+User@{Controller\+U\+I\+User}!include\+Subject@{include\+Subject}}
+\index{include\+Subject@{include\+Subject}!Controller\+U\+I\+User@{Controller\+U\+I\+User}}
+\subsubsection{\texorpdfstring{include\+Subject()}{includeSubject()}}
+{\footnotesize\ttfamily void Controller\+U\+I\+User\+::include\+Subject (\begin{DoxyParamCaption}\item[{\hyperlink{class_user}{User} $\ast$}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao permite ao usuario selecionar uma disciplina na qual ele deseje se matricular. É feita a solicitacao de inclusao de disciplina ao modulo de logica de negocio e é dado feedback ao usuario. 
+
+Implements \hyperlink{class_interface_u_i_user_a9e578488a9effc0f41f4ac034b6744cf}{Interface\+U\+I\+User}.
+
+
+
+Definition at line 259 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_u_i_user_a3d496ebc4d35be9d001c543ccc605341}\label{class_controller_u_i_user_a3d496ebc4d35be9d001c543ccc605341}} 
+\index{Controller\+U\+I\+User@{Controller\+U\+I\+User}!manage\+User\+Data@{manage\+User\+Data}}
+\index{manage\+User\+Data@{manage\+User\+Data}!Controller\+U\+I\+User@{Controller\+U\+I\+User}}
+\subsubsection{\texorpdfstring{manage\+User\+Data()}{manageUserData()}}
+{\footnotesize\ttfamily void Controller\+U\+I\+User\+::manage\+User\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{class_user}{User} $\ast$}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao exibe o menu de alteracao das informacoes pessoais do usuario, recebe uma solicitacao e chama a funcao adequada para processar a solicitacao recebida. 
+
+Implements \hyperlink{class_interface_u_i_user_a167f4ea2954c5b4e81d175bca1cee1f9}{Interface\+U\+I\+User}.
+
+
+
+Definition at line 148 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_u_i_user_a6a3a889cc4726487baa3e2f19f646810}\label{class_controller_u_i_user_a6a3a889cc4726487baa3e2f19f646810}} 
+\index{Controller\+U\+I\+User@{Controller\+U\+I\+User}!manage\+User\+Subjects@{manage\+User\+Subjects}}
+\index{manage\+User\+Subjects@{manage\+User\+Subjects}!Controller\+U\+I\+User@{Controller\+U\+I\+User}}
+\subsubsection{\texorpdfstring{manage\+User\+Subjects()}{manageUserSubjects()}}
+{\footnotesize\ttfamily void Controller\+U\+I\+User\+::manage\+User\+Subjects (\begin{DoxyParamCaption}\item[{\hyperlink{class_user}{User} $\ast$}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao exibe o menu de gerenciamento de disciplinas do usuario, recebe uma solicitacao e chama a funcao adequada para processar a solicitacao. 
+
+Implements \hyperlink{class_interface_u_i_user_a3830114ce74533d9ba66b0baaac79f0b}{Interface\+U\+I\+User}.
+
+
+
+Definition at line 174 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_u_i_user_a6ec069819ab7fe85b8419ee00714b8a3}\label{class_controller_u_i_user_a6ec069819ab7fe85b8419ee00714b8a3}} 
+\index{Controller\+U\+I\+User@{Controller\+U\+I\+User}!remove\+Subject@{remove\+Subject}}
+\index{remove\+Subject@{remove\+Subject}!Controller\+U\+I\+User@{Controller\+U\+I\+User}}
+\subsubsection{\texorpdfstring{remove\+Subject()}{removeSubject()}}
+{\footnotesize\ttfamily void Controller\+U\+I\+User\+::remove\+Subject (\begin{DoxyParamCaption}\item[{\hyperlink{class_user}{User} $\ast$}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao solicida ao modulo de logica de negocio a lista das disciplinas cadastradas, mostra um menu ao usuario para que ele selecione uma disciplina para trancamento e solicita ao módulo de logica de negocio que realize a remocao da disciplina selecionada. 
+
+Implements \hyperlink{class_interface_u_i_user_a2f1348af12103048245fcf31e9677994}{Interface\+U\+I\+User}.
+
+
+
+Definition at line 305 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_u_i_user_ad4ad2668cd963c5fa733bb8988268d99}\label{class_controller_u_i_user_ad4ad2668cd963c5fa733bb8988268d99}} 
+\index{Controller\+U\+I\+User@{Controller\+U\+I\+User}!set\+Downstream\+Controller@{set\+Downstream\+Controller}}
+\index{set\+Downstream\+Controller@{set\+Downstream\+Controller}!Controller\+U\+I\+User@{Controller\+U\+I\+User}}
+\subsubsection{\texorpdfstring{set\+Downstream\+Controller()}{setDownstreamController()}}
+{\footnotesize\ttfamily void Controller\+U\+I\+User\+::set\+Downstream\+Controller (\begin{DoxyParamCaption}\item[{\hyperlink{class_interface_b_l_user}{Interface\+B\+L\+User} $\ast$}]{controller\+BL }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_interface_u_i_user_a304a797f05d78a08f3ed2116c7a0028a}{Interface\+U\+I\+User}.
+
+
+
+Definition at line 75 of file controllers.\+hpp.
+
+\mbox{\Hypertarget{class_controller_u_i_user_a98a0e51ff5b82264bdda2683e5b19e36}\label{class_controller_u_i_user_a98a0e51ff5b82264bdda2683e5b19e36}} 
+\index{Controller\+U\+I\+User@{Controller\+U\+I\+User}!show\+Subjects@{show\+Subjects}}
+\index{show\+Subjects@{show\+Subjects}!Controller\+U\+I\+User@{Controller\+U\+I\+User}}
+\subsubsection{\texorpdfstring{show\+Subjects()}{showSubjects()}}
+{\footnotesize\ttfamily void Controller\+U\+I\+User\+::show\+Subjects (\begin{DoxyParamCaption}\item[{\hyperlink{class_user}{User} $\ast$}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_interface_u_i_user_ad3e4efe4c7292c8a677fd8eeefcf6ae4}{Interface\+U\+I\+User}.
+
+
+
+Definition at line 254 of file controllers.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{controllers_8hpp}{controllers.\+hpp}\item 
+\hyperlink{controllers_8cpp}{controllers.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,232 @@
+\hypertarget{class_controller_b_l_admin}{}\section{Controller\+B\+L\+Admin Class Reference}
+\label{class_controller_b_l_admin}\index{Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}}
+
+
+{\ttfamily \#include $<$controllers.\+hpp$>$}
+
+
+
+Inherits \hyperlink{class_interface_b_l_admin}{Interface\+B\+L\+Admin}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_controller_b_l_admin_a6e077c2cf0d0420c4104a637e930b764}{include\+Student} (const string \&, const string \&, const string \&, int)
+\item 
+std\+::map$<$ std\+::string, \hyperlink{class_user}{User} $\ast$ $>$ \& \hyperlink{class_controller_b_l_admin_add75e8118f5e4f37775edfcb104281aa}{get\+User\+Bank} ()
+\item 
+std\+::map$<$ std\+::string, \hyperlink{class_subject}{Subject} $\ast$ $>$ \& \hyperlink{class_controller_b_l_admin_a86f1e998ca81cc440594d62e60fc1ed9}{get\+Subjects\+Bank} ()
+\item 
+void \hyperlink{class_controller_b_l_admin_ad504705ce46509672751a4adfe1fa773}{remove\+Student} (\hyperlink{class_user}{User} $\ast$)
+\item 
+bool \hyperlink{class_controller_b_l_admin_a6c78d14f6b7fa350a63c5dbb2ac31084}{include\+Subject} (const string \&)
+\item 
+bool \hyperlink{class_controller_b_l_admin_abec5332aa0ecec899ea7ea814c2b2f5e}{include\+Topic} (const string \&, \hyperlink{class_subject}{Subject} $\ast$)
+\item 
+bool \hyperlink{class_controller_b_l_admin_a995da6bb9402ddb388794ff6410aebe5}{include\+Quiz} (const string \&, std\+::vector$<$ \hyperlink{class_question}{Question} $\ast$$>$, \hyperlink{class_topic}{Topic} $\ast$)
+\item 
+void \hyperlink{class_controller_b_l_admin_ab6be786a6347283943640ccba01ac2d1}{remove\+Subject} (\hyperlink{class_subject}{Subject} $\ast$)
+\item 
+void \hyperlink{class_controller_b_l_admin_a615837120d6e4ba94fa32f13d2e8fac1}{remove\+Topic} (\hyperlink{class_topic}{Topic} $\ast$, \hyperlink{class_subject}{Subject} $\ast$)
+\item 
+void \hyperlink{class_controller_b_l_admin_ad5536394e16e953f2a68e04be748dbd3}{remove\+Quiz} (\hyperlink{class_quiz}{Quiz} $\ast$, \hyperlink{class_topic}{Topic} $\ast$, \hyperlink{class_subject}{Subject} $\ast$)
+\item 
+void \hyperlink{class_controller_b_l_admin_a372a88e17194ff8c2224f50b2862f35d}{set\+Downstream\+Controller} (\hyperlink{class_stub_p_r}{Stub\+PR} $\ast$controller\+PR)
+\item 
+\hyperlink{class_controller_b_l_admin_a65186bda423d94ca5545765e2f552019}{Controller\+B\+L\+Admin} ()
+\item 
+\hyperlink{class_controller_b_l_admin_a67981d7b16d1cb3c727da11eb5405022}{$\sim$\+Controller\+B\+L\+Admin} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 115 of file controllers.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_controller_b_l_admin_a65186bda423d94ca5545765e2f552019}\label{class_controller_b_l_admin_a65186bda423d94ca5545765e2f552019}} 
+\index{Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}!Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}}
+\index{Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}!Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{Controller\+B\+L\+Admin()}{ControllerBLAdmin()}}
+{\footnotesize\ttfamily Controller\+B\+L\+Admin\+::\+Controller\+B\+L\+Admin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 399 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_b_l_admin_a67981d7b16d1cb3c727da11eb5405022}\label{class_controller_b_l_admin_a67981d7b16d1cb3c727da11eb5405022}} 
+\index{Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}!````~Controller\+B\+L\+Admin@{$\sim$\+Controller\+B\+L\+Admin}}
+\index{````~Controller\+B\+L\+Admin@{$\sim$\+Controller\+B\+L\+Admin}!Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{$\sim$\+Controller\+B\+L\+Admin()}{~ControllerBLAdmin()}}
+{\footnotesize\ttfamily Controller\+B\+L\+Admin\+::$\sim$\+Controller\+B\+L\+Admin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 400 of file controllers.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_controller_b_l_admin_a86f1e998ca81cc440594d62e60fc1ed9}\label{class_controller_b_l_admin_a86f1e998ca81cc440594d62e60fc1ed9}} 
+\index{Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}!get\+Subjects\+Bank@{get\+Subjects\+Bank}}
+\index{get\+Subjects\+Bank@{get\+Subjects\+Bank}!Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{get\+Subjects\+Bank()}{getSubjectsBank()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, \hyperlink{class_subject}{Subject} $\ast$ $>$ \& Controller\+B\+L\+Admin\+::get\+Subjects\+Bank (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao solicita ao modulo de persistencia o banco de disciplinas e retorna a estrutura recebida. 
+
+Implements \hyperlink{class_interface_b_l_admin_ace992c81c3ca58363336ff2f7fbbda0b}{Interface\+B\+L\+Admin}.
+
+
+
+Definition at line 655 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_b_l_admin_add75e8118f5e4f37775edfcb104281aa}\label{class_controller_b_l_admin_add75e8118f5e4f37775edfcb104281aa}} 
+\index{Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}!get\+User\+Bank@{get\+User\+Bank}}
+\index{get\+User\+Bank@{get\+User\+Bank}!Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{get\+User\+Bank()}{getUserBank()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, \hyperlink{class_user}{User} $\ast$ $>$ \& Controller\+B\+L\+Admin\+::get\+User\+Bank (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao solicita ao modulo de persistencia o banco de usuarios e retorna a estrutura recebida. 
+
+Implements \hyperlink{class_interface_b_l_admin_a785c49557dc1dd6a955ee12db1bb6925}{Interface\+B\+L\+Admin}.
+
+
+
+Definition at line 450 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_b_l_admin_a995da6bb9402ddb388794ff6410aebe5}\label{class_controller_b_l_admin_a995da6bb9402ddb388794ff6410aebe5}} 
+\index{Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}!include\+Quiz@{include\+Quiz}}
+\index{include\+Quiz@{include\+Quiz}!Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{include\+Quiz()}{includeQuiz()}}
+{\footnotesize\ttfamily bool Controller\+B\+L\+Admin\+::include\+Quiz (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{std\+::vector$<$ \hyperlink{class_question}{Question} $\ast$$>$}]{questions,  }\item[{\hyperlink{class_topic}{Topic} $\ast$}]{top }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao verifica se ja nao existe um quiz com o nome \textquotesingle{}name\textquotesingle{} no topico top e, caso nao exista, cria um novo quiz com nome \textquotesingle{}name\textquotesingle{} e com as questoes do vetor questions. 
+
+Implements \hyperlink{class_interface_b_l_admin_aca0cf080ee23134183cf70dd094edfe2}{Interface\+B\+L\+Admin}.
+
+
+
+Definition at line 680 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_b_l_admin_a6e077c2cf0d0420c4104a637e930b764}\label{class_controller_b_l_admin_a6e077c2cf0d0420c4104a637e930b764}} 
+\index{Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}!include\+Student@{include\+Student}}
+\index{include\+Student@{include\+Student}!Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{include\+Student()}{includeStudent()}}
+{\footnotesize\ttfamily bool Controller\+B\+L\+Admin\+::include\+Student (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{const string \&}]{login,  }\item[{const string \&}]{pass,  }\item[{int}]{adm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao cria recebe como parametros um nome, um login, uma senha e um status (bool) de admin ou user, cria um novo usuario com os parametros recebidos e solicita ao modulo de persistencia que os dados do usuario criado sejam registrados no banco de dados. 
+
+Implements \hyperlink{class_interface_b_l_admin_a716e03cae2e978d281f813ea98137191}{Interface\+B\+L\+Admin}.
+
+
+
+Definition at line 402 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_b_l_admin_a6c78d14f6b7fa350a63c5dbb2ac31084}\label{class_controller_b_l_admin_a6c78d14f6b7fa350a63c5dbb2ac31084}} 
+\index{Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}!include\+Subject@{include\+Subject}}
+\index{include\+Subject@{include\+Subject}!Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{include\+Subject()}{includeSubject()}}
+{\footnotesize\ttfamily bool Controller\+B\+L\+Admin\+::include\+Subject (\begin{DoxyParamCaption}\item[{const string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao solicita ao modulo de persistencia o banco de disciplinas, verifica se ja nao existe uma disciplina com o nome \textquotesingle{}name\textquotesingle{} e, caso nao exista, solicita ao modulo de persistencia o armazenamento de uma nova disciplina com nome \textquotesingle{}name\textquotesingle{}. 
+
+Implements \hyperlink{class_interface_b_l_admin_aa0b718aa7b0f47adad6601c7470fb8c4}{Interface\+B\+L\+Admin}.
+
+
+
+Definition at line 661 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_b_l_admin_abec5332aa0ecec899ea7ea814c2b2f5e}\label{class_controller_b_l_admin_abec5332aa0ecec899ea7ea814c2b2f5e}} 
+\index{Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}!include\+Topic@{include\+Topic}}
+\index{include\+Topic@{include\+Topic}!Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{include\+Topic()}{includeTopic()}}
+{\footnotesize\ttfamily bool Controller\+B\+L\+Admin\+::include\+Topic (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{\hyperlink{class_subject}{Subject} $\ast$}]{sub }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao verifica se ja nao existe um topico com o nome \textquotesingle{}name\textquotesingle{} na disciplina sub e, caso nao exista, adiciona o novo topico. 
+
+Implements \hyperlink{class_interface_b_l_admin_aa1d0fe6d4886260d1aa47d7bf73ad9ff}{Interface\+B\+L\+Admin}.
+
+
+
+Definition at line 671 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_b_l_admin_ad5536394e16e953f2a68e04be748dbd3}\label{class_controller_b_l_admin_ad5536394e16e953f2a68e04be748dbd3}} 
+\index{Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}!remove\+Quiz@{remove\+Quiz}}
+\index{remove\+Quiz@{remove\+Quiz}!Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{remove\+Quiz()}{removeQuiz()}}
+{\footnotesize\ttfamily void Controller\+B\+L\+Admin\+::remove\+Quiz (\begin{DoxyParamCaption}\item[{\hyperlink{class_quiz}{Quiz} $\ast$}]{quiz,  }\item[{\hyperlink{class_topic}{Topic} $\ast$}]{top,  }\item[{\hyperlink{class_subject}{Subject} $\ast$}]{sub }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_interface_b_l_admin_a5e0da435e49e43b169b13725df5a354a}{Interface\+B\+L\+Admin}.
+
+
+
+Definition at line 701 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_b_l_admin_ad504705ce46509672751a4adfe1fa773}\label{class_controller_b_l_admin_ad504705ce46509672751a4adfe1fa773}} 
+\index{Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}!remove\+Student@{remove\+Student}}
+\index{remove\+Student@{remove\+Student}!Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{remove\+Student()}{removeStudent()}}
+{\footnotesize\ttfamily void Controller\+B\+L\+Admin\+::remove\+Student (\begin{DoxyParamCaption}\item[{\hyperlink{class_user}{User} $\ast$}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao solicita ao modulo de persistencia que remova o usuario user do banco de dados. 
+
+Implements \hyperlink{class_interface_b_l_admin_ac1e32eeb8d7a76c933024fc639fff67f}{Interface\+B\+L\+Admin}.
+
+
+
+Definition at line 444 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_b_l_admin_ab6be786a6347283943640ccba01ac2d1}\label{class_controller_b_l_admin_ab6be786a6347283943640ccba01ac2d1}} 
+\index{Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}!remove\+Subject@{remove\+Subject}}
+\index{remove\+Subject@{remove\+Subject}!Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{remove\+Subject()}{removeSubject()}}
+{\footnotesize\ttfamily void Controller\+B\+L\+Admin\+::remove\+Subject (\begin{DoxyParamCaption}\item[{\hyperlink{class_subject}{Subject} $\ast$}]{sub }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_interface_b_l_admin_aed60dd105ebed648c834d57c6b1c9224}{Interface\+B\+L\+Admin}.
+
+
+
+Definition at line 699 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_b_l_admin_a615837120d6e4ba94fa32f13d2e8fac1}\label{class_controller_b_l_admin_a615837120d6e4ba94fa32f13d2e8fac1}} 
+\index{Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}!remove\+Topic@{remove\+Topic}}
+\index{remove\+Topic@{remove\+Topic}!Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{remove\+Topic()}{removeTopic()}}
+{\footnotesize\ttfamily void Controller\+B\+L\+Admin\+::remove\+Topic (\begin{DoxyParamCaption}\item[{\hyperlink{class_topic}{Topic} $\ast$}]{top,  }\item[{\hyperlink{class_subject}{Subject} $\ast$}]{sub }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_interface_b_l_admin_a9ec942ebf3eb4a742de514801a378aca}{Interface\+B\+L\+Admin}.
+
+
+
+Definition at line 700 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_b_l_admin_a372a88e17194ff8c2224f50b2862f35d}\label{class_controller_b_l_admin_a372a88e17194ff8c2224f50b2862f35d}} 
+\index{Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}!set\+Downstream\+Controller@{set\+Downstream\+Controller}}
+\index{set\+Downstream\+Controller@{set\+Downstream\+Controller}!Controller\+B\+L\+Admin@{Controller\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{set\+Downstream\+Controller()}{setDownstreamController()}}
+{\footnotesize\ttfamily void Controller\+B\+L\+Admin\+::set\+Downstream\+Controller (\begin{DoxyParamCaption}\item[{\hyperlink{class_stub_p_r}{Stub\+PR} $\ast$}]{controller\+PR }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_interface_b_l_admin_abe950882707e9b393dd989af66ab2f9f}{Interface\+B\+L\+Admin}.
+
+
+
+Definition at line 130 of file controllers.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{controllers_8hpp}{controllers.\+hpp}\item 
+\hyperlink{controllers_8cpp}{controllers.\+cpp}\end{DoxyCompactItemize}

@@ -1,3 +1,10 @@
+/**
+/*
+*   @author joseleite19
+*   @since 07/05/2017
+*   @version 3.0
+*/
+
 #include "question.hpp"
 
 Question::Question(const std::string& text, const char resp, int pontuacao): text(text), resp(resp), pontuacao(pontuacao) {

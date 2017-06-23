@@ -1,0 +1,97 @@
+\hypertarget{class_controller_u_i_auth}{}\section{Controller\+U\+I\+Auth Class Reference}
+\label{class_controller_u_i_auth}\index{Controller\+U\+I\+Auth@{Controller\+U\+I\+Auth}}
+
+
+A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+ON.  
+
+
+
+
+{\ttfamily \#include $<$controllers.\+hpp$>$}
+
+
+
+Inherits \hyperlink{class_interface_u_i_auth}{Interface\+U\+I\+Auth}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_user}{User} $\ast$ \hyperlink{class_controller_u_i_auth_afb3e3fe781985fe7c7977b2c151dcd7a}{request\+Auth} (void)
+\item 
+void \hyperlink{class_controller_u_i_auth_a38a73726a7a7d7909cf078dd781d9dc3}{set\+Downstream\+Controller} (\hyperlink{class_interface_b_l_auth}{Interface\+B\+L\+Auth} $\ast$controller\+BL)
+\item 
+\hyperlink{class_controller_u_i_auth_a6dcb9a195d76fc56d89d30af5da3ed72}{$\sim$\+Controller\+U\+I\+Auth} (void)
+\item 
+\hyperlink{class_controller_u_i_auth_a0976b0902249eebb55d7e449797c8545}{Controller\+U\+I\+Auth} (void)
+\begin{DoxyCompactList}\small\item\em A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+ON M\+O\+D\+U\+LE. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+ON. 
+
+Definition at line 41 of file controllers.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_controller_u_i_auth_a6dcb9a195d76fc56d89d30af5da3ed72}\label{class_controller_u_i_auth_a6dcb9a195d76fc56d89d30af5da3ed72}} 
+\index{Controller\+U\+I\+Auth@{Controller\+U\+I\+Auth}!````~Controller\+U\+I\+Auth@{$\sim$\+Controller\+U\+I\+Auth}}
+\index{````~Controller\+U\+I\+Auth@{$\sim$\+Controller\+U\+I\+Auth}!Controller\+U\+I\+Auth@{Controller\+U\+I\+Auth}}
+\subsubsection{\texorpdfstring{$\sim$\+Controller\+U\+I\+Auth()}{~ControllerUIAuth()}}
+{\footnotesize\ttfamily Controller\+U\+I\+Auth\+::$\sim$\+Controller\+U\+I\+Auth (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 103 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_u_i_auth_a0976b0902249eebb55d7e449797c8545}\label{class_controller_u_i_auth_a0976b0902249eebb55d7e449797c8545}} 
+\index{Controller\+U\+I\+Auth@{Controller\+U\+I\+Auth}!Controller\+U\+I\+Auth@{Controller\+U\+I\+Auth}}
+\index{Controller\+U\+I\+Auth@{Controller\+U\+I\+Auth}!Controller\+U\+I\+Auth@{Controller\+U\+I\+Auth}}
+\subsubsection{\texorpdfstring{Controller\+U\+I\+Auth()}{ControllerUIAuth()}}
+{\footnotesize\ttfamily Controller\+U\+I\+Auth\+::\+Controller\+U\+I\+Auth (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+ON M\+O\+D\+U\+LE. 
+
+
+
+Definition at line 102 of file controllers.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_controller_u_i_auth_afb3e3fe781985fe7c7977b2c151dcd7a}\label{class_controller_u_i_auth_afb3e3fe781985fe7c7977b2c151dcd7a}} 
+\index{Controller\+U\+I\+Auth@{Controller\+U\+I\+Auth}!request\+Auth@{request\+Auth}}
+\index{request\+Auth@{request\+Auth}!Controller\+U\+I\+Auth@{Controller\+U\+I\+Auth}}
+\subsubsection{\texorpdfstring{request\+Auth()}{requestAuth()}}
+{\footnotesize\ttfamily \hyperlink{class_user}{User} $\ast$ Controller\+U\+I\+Auth\+::request\+Auth (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao recebe do usuario as entradas de login e senha e solicita ao modulo de lógica de negócio que tente realizar login no sistema com os dados fornecidos. Retorna um ponteiro para uma instancia da classe \hyperlink{class_user}{User}, caso o login seja bem-\/sucedido, e um ponteiro nulo, caso contrário. 
+
+Implements \hyperlink{class_interface_u_i_auth_aa1c72a24f846accc6417a3b866ec9095}{Interface\+U\+I\+Auth}.
+
+
+
+Definition at line 105 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_u_i_auth_a38a73726a7a7d7909cf078dd781d9dc3}\label{class_controller_u_i_auth_a38a73726a7a7d7909cf078dd781d9dc3}} 
+\index{Controller\+U\+I\+Auth@{Controller\+U\+I\+Auth}!set\+Downstream\+Controller@{set\+Downstream\+Controller}}
+\index{set\+Downstream\+Controller@{set\+Downstream\+Controller}!Controller\+U\+I\+Auth@{Controller\+U\+I\+Auth}}
+\subsubsection{\texorpdfstring{set\+Downstream\+Controller()}{setDownstreamController()}}
+{\footnotesize\ttfamily void Controller\+U\+I\+Auth\+::set\+Downstream\+Controller (\begin{DoxyParamCaption}\item[{\hyperlink{class_interface_b_l_auth}{Interface\+B\+L\+Auth} $\ast$}]{controller\+BL }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_interface_u_i_auth_af955fb60079d683f906912feb540c3ec}{Interface\+U\+I\+Auth}.
+
+
+
+Definition at line 47 of file controllers.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{controllers_8hpp}{controllers.\+hpp}\item 
+\hyperlink{controllers_8cpp}{controllers.\+cpp}\end{DoxyCompactItemize}

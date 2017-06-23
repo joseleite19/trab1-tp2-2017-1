@@ -1,0 +1,211 @@
+\hypertarget{class_user}{}\section{User Class Reference}
+\label{class_user}\index{User@{User}}
+
+
+Po, tem que funfar em Windows tmb ne.  
+
+
+
+
+{\ttfamily \#include $<$user.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_user_a49a5d96676bc687582401a8feb6d8fab}{User} (const string \&, const string \&, const string \&, const bool \&)
+\begin{DoxyCompactList}\small\item\em /$\ast$ \end{DoxyCompactList}\item 
+\hyperlink{class_user_ac00b72ad64eb4149f7b21b9f5468c2b2}{$\sim$\+User} ()
+\item 
+string \hyperlink{class_user_ab9b2b5feb6bdd1582696eb6d44cee384}{get\+Name} () const
+\item 
+string \hyperlink{class_user_a33429bdd1253091697a9c5c5e1448bee}{get\+Password} () const
+\item 
+string \hyperlink{class_user_a696573ea58ab847ec562b3ff55f5532b}{get\+Login} () const
+\item 
+bool \hyperlink{class_user_af85eb63b7c9f95d82c1ccfc5b1f07761}{try\+Login} (const string \&, const string \&) const
+\begin{DoxyCompactList}\small\item\em Funcao que verifica se login e password estao corretos. \end{DoxyCompactList}\item 
+bool \hyperlink{class_user_ad459325546846a729a583db0a3c73f23}{is\+Admin} (void)
+\item 
+bool \hyperlink{class_user_ab31250ec7220ae7832cf20a13308457f}{set\+Password} (const string \&, const string \&)
+\item 
+void \hyperlink{class_user_a76273e1ada631144d57fc2173c9100aa}{set\+Name} (const string \&)
+\item 
+void \hyperlink{class_user_aa800167b7d7c5d342af15a0ba01a7ee4}{show\+Subjects} ()
+\item 
+std\+::vector$<$ \hyperlink{class_subject}{Subject} $>$ \& \hyperlink{class_user_ac31e6c1c46e39361b20be3e92b67085b}{get\+Subjects} ()
+\item 
+void \hyperlink{class_user_a4ecbfe6ef4b04825993217a889c64401}{include\+Subject} (\hyperlink{class_subject}{Subject})
+\item 
+void \hyperlink{class_user_a3b3ce064a0cc1edbca2c475ebcbd9e09}{remove\+Subject} (const string \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Po, tem que funfar em Windows tmb ne. 
+
+Definition at line 22 of file user.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_user_a49a5d96676bc687582401a8feb6d8fab}\label{class_user_a49a5d96676bc687582401a8feb6d8fab}} 
+\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\subsubsection{\texorpdfstring{User()}{User()}}
+{\footnotesize\ttfamily User\+::\+User (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{const string \&}]{login,  }\item[{const string \&}]{pass,  }\item[{const bool \&}]{admin }\end{DoxyParamCaption})}
+
+
+
+/$\ast$ 
+
+\begin{DoxyAuthor}{Author}
+joseleite19 
+\end{DoxyAuthor}
+\begin{DoxySince}{Since}
+07/05/2017 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+3.\+0 
+\end{DoxyVersion}
+
+
+Definition at line 17 of file user.\+cpp.
+
+\mbox{\Hypertarget{class_user_ac00b72ad64eb4149f7b21b9f5468c2b2}\label{class_user_ac00b72ad64eb4149f7b21b9f5468c2b2}} 
+\index{User@{User}!````~User@{$\sim$\+User}}
+\index{````~User@{$\sim$\+User}!User@{User}}
+\subsubsection{\texorpdfstring{$\sim$\+User()}{~User()}}
+{\footnotesize\ttfamily User\+::$\sim$\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 20 of file user.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_user_a696573ea58ab847ec562b3ff55f5532b}\label{class_user_a696573ea58ab847ec562b3ff55f5532b}} 
+\index{User@{User}!get\+Login@{get\+Login}}
+\index{get\+Login@{get\+Login}!User@{User}}
+\subsubsection{\texorpdfstring{get\+Login()}{getLogin()}}
+{\footnotesize\ttfamily string User\+::get\+Login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 34 of file user.\+cpp.
+
+\mbox{\Hypertarget{class_user_ab9b2b5feb6bdd1582696eb6d44cee384}\label{class_user_ab9b2b5feb6bdd1582696eb6d44cee384}} 
+\index{User@{User}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!User@{User}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily string User\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 22 of file user.\+cpp.
+
+\mbox{\Hypertarget{class_user_a33429bdd1253091697a9c5c5e1448bee}\label{class_user_a33429bdd1253091697a9c5c5e1448bee}} 
+\index{User@{User}!get\+Password@{get\+Password}}
+\index{get\+Password@{get\+Password}!User@{User}}
+\subsubsection{\texorpdfstring{get\+Password()}{getPassword()}}
+{\footnotesize\ttfamily string User\+::get\+Password (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 26 of file user.\+cpp.
+
+\mbox{\Hypertarget{class_user_ac31e6c1c46e39361b20be3e92b67085b}\label{class_user_ac31e6c1c46e39361b20be3e92b67085b}} 
+\index{User@{User}!get\+Subjects@{get\+Subjects}}
+\index{get\+Subjects@{get\+Subjects}!User@{User}}
+\subsubsection{\texorpdfstring{get\+Subjects()}{getSubjects()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{class_subject}{Subject} $>$ \& User\+::get\+Subjects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 64 of file user.\+cpp.
+
+\mbox{\Hypertarget{class_user_a4ecbfe6ef4b04825993217a889c64401}\label{class_user_a4ecbfe6ef4b04825993217a889c64401}} 
+\index{User@{User}!include\+Subject@{include\+Subject}}
+\index{include\+Subject@{include\+Subject}!User@{User}}
+\subsubsection{\texorpdfstring{include\+Subject()}{includeSubject()}}
+{\footnotesize\ttfamily void User\+::include\+Subject (\begin{DoxyParamCaption}\item[{\hyperlink{class_subject}{Subject}}]{subject }\end{DoxyParamCaption})}
+
+
+
+Definition at line 54 of file user.\+cpp.
+
+\mbox{\Hypertarget{class_user_ad459325546846a729a583db0a3c73f23}\label{class_user_ad459325546846a729a583db0a3c73f23}} 
+\index{User@{User}!is\+Admin@{is\+Admin}}
+\index{is\+Admin@{is\+Admin}!User@{User}}
+\subsubsection{\texorpdfstring{is\+Admin()}{isAdmin()}}
+{\footnotesize\ttfamily bool User\+::is\+Admin (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file user.\+cpp.
+
+\mbox{\Hypertarget{class_user_a3b3ce064a0cc1edbca2c475ebcbd9e09}\label{class_user_a3b3ce064a0cc1edbca2c475ebcbd9e09}} 
+\index{User@{User}!remove\+Subject@{remove\+Subject}}
+\index{remove\+Subject@{remove\+Subject}!User@{User}}
+\subsubsection{\texorpdfstring{remove\+Subject()}{removeSubject()}}
+{\footnotesize\ttfamily void User\+::remove\+Subject (\begin{DoxyParamCaption}\item[{const string \&}]{subject }\end{DoxyParamCaption})}
+
+
+
+Definition at line 59 of file user.\+cpp.
+
+\mbox{\Hypertarget{class_user_a76273e1ada631144d57fc2173c9100aa}\label{class_user_a76273e1ada631144d57fc2173c9100aa}} 
+\index{User@{User}!set\+Name@{set\+Name}}
+\index{set\+Name@{set\+Name}!User@{User}}
+\subsubsection{\texorpdfstring{set\+Name()}{setName()}}
+{\footnotesize\ttfamily void User\+::set\+Name (\begin{DoxyParamCaption}\item[{const string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 30 of file user.\+cpp.
+
+\mbox{\Hypertarget{class_user_ab31250ec7220ae7832cf20a13308457f}\label{class_user_ab31250ec7220ae7832cf20a13308457f}} 
+\index{User@{User}!set\+Password@{set\+Password}}
+\index{set\+Password@{set\+Password}!User@{User}}
+\subsubsection{\texorpdfstring{set\+Password()}{setPassword()}}
+{\footnotesize\ttfamily bool User\+::set\+Password (\begin{DoxyParamCaption}\item[{const string \&}]{oldpass,  }\item[{const string \&}]{newpass }\end{DoxyParamCaption})}
+
+
+
+Definition at line 46 of file user.\+cpp.
+
+\mbox{\Hypertarget{class_user_aa800167b7d7c5d342af15a0ba01a7ee4}\label{class_user_aa800167b7d7c5d342af15a0ba01a7ee4}} 
+\index{User@{User}!show\+Subjects@{show\+Subjects}}
+\index{show\+Subjects@{show\+Subjects}!User@{User}}
+\subsubsection{\texorpdfstring{show\+Subjects()}{showSubjects()}}
+{\footnotesize\ttfamily void User\+::show\+Subjects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 68 of file user.\+cpp.
+
+\mbox{\Hypertarget{class_user_af85eb63b7c9f95d82c1ccfc5b1f07761}\label{class_user_af85eb63b7c9f95d82c1ccfc5b1f07761}} 
+\index{User@{User}!try\+Login@{try\+Login}}
+\index{try\+Login@{try\+Login}!User@{User}}
+\subsubsection{\texorpdfstring{try\+Login()}{tryLogin()}}
+{\footnotesize\ttfamily bool User\+::try\+Login (\begin{DoxyParamCaption}\item[{const string \&}]{plogin,  }\item[{const string \&}]{ppassword }\end{DoxyParamCaption}) const}
+
+
+
+Funcao que verifica se login e password estao corretos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duas} & strings que representam login e senha  retorna um booleano que indica se password e senha estao corretos. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 38 of file user.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{user_8hpp}{user.\+hpp}\item 
+\hyperlink{user_8cpp}{user.\+cpp}\end{DoxyCompactItemize}

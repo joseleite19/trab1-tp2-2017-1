@@ -1,9 +1,18 @@
+/**
+*   Camada de persistencia.
+*  Usa os arquivos users e materias, para adicao e exclusao de novos alunos e materias.
+*   @author cftpontes
+*   @since 09/05/2017
+*   @version 3.0
+*/
+
+
 #ifndef STUBS_H
 #define STUBS_H
 
 #include <map>
 
-//como só são usado ponteiros, não é necessario incluir todo o header das classes
+/// como so sao usados ponteiros, nao e necessario incluir todo o header das classes
 class User;
 class Subject;
 

@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['setdownstreamcontroller',['setDownstreamController',['../class_controller_u_i_auth.html#a38a73726a7a7d7909cf078dd781d9dc3',1,'ControllerUIAuth::setDownstreamController()'],['../class_controller_b_l_auth.html#ae514249d909d1449d23f1d2fe7b85eea',1,'ControllerBLAuth::setDownstreamController()'],['../class_controller_u_i_user.html#ad4ad2668cd963c5fa733bb8988268d99',1,'ControllerUIUser::setDownstreamController()'],['../class_controller_b_l_user.html#a4594159d854a4bbb2aef17e7ef688821',1,'ControllerBLUser::setDownstreamController()'],['../class_controller_u_i_admin.html#aad33fe10f31f698f1bf0343aa5b2b7ec',1,'ControllerUIAdmin::setDownstreamController()'],['../class_controller_b_l_admin.html#a372a88e17194ff8c2224f50b2862f35d',1,'ControllerBLAdmin::setDownstreamController()'],['../class_controller_u_i_quiz.html#a17083c1071e7bee3a1d4c0515d433907',1,'ControllerUIQuiz::setDownstreamController()'],['../class_controller_b_l_quiz.html#a77ada4c0f633482129e9179e24f6f2a8',1,'ControllerBLQuiz::setDownstreamController()'],['../class_interface_u_i_auth.html#af955fb60079d683f906912feb540c3ec',1,'InterfaceUIAuth::setDownstreamController()'],['../class_interface_b_l_auth.html#a738de797493eb2def64b6bf23b911a23',1,'InterfaceBLAuth::setDownstreamController()'],['../class_interface_u_i_user.html#a304a797f05d78a08f3ed2116c7a0028a',1,'InterfaceUIUser::setDownstreamController()'],['../class_interface_b_l_user.html#ad68d0903bc24cf0fa3538be028831783',1,'InterfaceBLUser::setDownstreamController()'],['../class_interface_u_i_admin.html#a4c663ca0610288ba4ac5b8f772454cfc',1,'InterfaceUIAdmin::setDownstreamController()'],['../class_interface_b_l_admin.html#abe950882707e9b393dd989af66ab2f9f',1,'InterfaceBLAdmin::setDownstreamController()'],['../class_interface_u_i_quiz.html#a599dff405ea117a75c7084c2dd08ee28',1,'InterfaceUIQuiz::setDownstreamController()'],['../class_interface_b_l_quiz.html#aa2af7b48e4caf5ecdf446f64a351c86f',1,'InterfaceBLQuiz::setDownstreamController()']]],
+  ['setname',['setname',['../class_quiz.html#af6d775e1973477e34fcff81c75d11388',1,'Quiz::setname()'],['../class_subject.html#a9d3ec013f7c71f428f1118257785f890',1,'Subject::setName()'],['../class_topic.html#aee887f16cd1117e4b2f94b79e4f1b8ea',1,'Topic::setName()'],['../class_user.html#a76273e1ada631144d57fc2173c9100aa',1,'User::setName()']]],
+  ['setpassword',['setPassword',['../class_user.html#ab31250ec7220ae7832cf20a13308457f',1,'User']]],
+  ['show',['show',['../class_question.html#a1680a8dfef011dcf971b56ab302b3164',1,'Question']]],
+  ['showquizzes',['showQuizzes',['../class_topic.html#afd8a1e80d1253a6b504e69946d6c44f3',1,'Topic']]],
+  ['showsubjects',['showSubjects',['../class_controller_u_i_user.html#a98a0e51ff5b82264bdda2683e5b19e36',1,'ControllerUIUser::showSubjects()'],['../class_interface_u_i_user.html#ad3e4efe4c7292c8a677fd8eeefcf6ae4',1,'InterfaceUIUser::showSubjects()'],['../class_user.html#aa800167b7d7c5d342af15a0ba01a7ee4',1,'User::showSubjects()']]],
+  ['showtopics',['showTopics',['../class_subject.html#ab9f2b4494496feb662d69aac64e5e61c',1,'Subject']]],
+  ['showui',['showUI',['../class_controller_init.html#a7a496045ee93029b095e84ce55e1818f',1,'ControllerInit']]],
+  ['storename',['storeName',['../class_stub_p_r.html#a17e7dc40468374e5b7cc01de19dcd0ed',1,'StubPR']]],
+  ['storepass',['storePass',['../class_stub_p_r.html#a1974be3ce48be29f04ba798a86d33d4b',1,'StubPR']]],
+  ['storesubject',['storeSubject',['../class_stub_p_r.html#a15dca263137dd3a1d9d107bad2053a4c',1,'StubPR']]],
+  ['storesubjectdb',['storeSubjectDB',['../class_stub_p_r.html#a771618cef296522de86a06bca2a56b58',1,'StubPR']]],
+  ['storeuserdata',['storeUserData',['../class_stub_p_r.html#ada02f504375eb2d769687fd33c520db1',1,'StubPR']]],
+  ['stubpr',['StubPR',['../class_stub_p_r.html',1,'StubPR'],['../class_stub_p_r.html#a422b75cc6a8e871a498e9d72fb7dc499',1,'StubPR::StubPR()']]],
+  ['stubpr_2ecpp',['stubPR.cpp',['../stub_p_r_8cpp.html',1,'']]],
+  ['stubpr_2ehpp',['stubPR.hpp',['../stub_p_r_8hpp.html',1,'']]],
+  ['subject',['Subject',['../class_subject.html',1,'Subject'],['../class_subject.html#aadd211855155af3c49b6907520d77675',1,'Subject::Subject()']]],
+  ['subject_2ecpp',['subject.cpp',['../subject_8cpp.html',1,'']]],
+  ['subject_2ehpp',['subject.hpp',['../subject_8hpp.html',1,'']]]
+];

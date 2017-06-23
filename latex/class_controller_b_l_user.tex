@@ -1,0 +1,152 @@
+\hypertarget{class_controller_b_l_user}{}\section{Controller\+B\+L\+User Class Reference}
+\label{class_controller_b_l_user}\index{Controller\+B\+L\+User@{Controller\+B\+L\+User}}
+
+
+{\ttfamily \#include $<$controllers.\+hpp$>$}
+
+
+
+Inherits \hyperlink{class_interface_b_l_user}{Interface\+B\+L\+User}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_controller_b_l_user_a8fb74fe44753778c8bf820f51737dd76}{change\+Name} (\hyperlink{class_user}{User} $\ast$, const string \&)
+\item 
+bool \hyperlink{class_controller_b_l_user_a90ac2cdd863f28b57b6e7d27ff4ede0c}{change\+Pass} (\hyperlink{class_user}{User} $\ast$, const string \&, const string \&)
+\item 
+std\+::map$<$ std\+::string, \hyperlink{class_subject}{Subject} $\ast$ $>$ \& \hyperlink{class_controller_b_l_user_a2f422b6fdb912d9bec90af7de56e7656}{get\+Subjects\+Bank} ()
+\item 
+void \hyperlink{class_controller_b_l_user_acece0a3e60fb4fbf748783f1370e9d79}{include\+Subject} (\hyperlink{class_user}{User} $\ast$, const string \&)
+\item 
+void \hyperlink{class_controller_b_l_user_aaed19dcb20672c4bfe3c98f18d1c0a2e}{remove\+Subject} (\hyperlink{class_user}{User} $\ast$, const string \&)
+\item 
+void \hyperlink{class_controller_b_l_user_a4594159d854a4bbb2aef17e7ef688821}{set\+Downstream\+Controller} (\hyperlink{class_stub_p_r}{Stub\+PR} $\ast$controller\+PR)
+\item 
+\hyperlink{class_controller_b_l_user_a27e5d4017b659576bc6b0b77f533d139}{Controller\+B\+L\+User} (void)
+\item 
+\hyperlink{class_controller_b_l_user_aa16e2866d7ca11aa8b5bea2f07e4b379}{$\sim$\+Controller\+B\+L\+User} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 80 of file controllers.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_controller_b_l_user_a27e5d4017b659576bc6b0b77f533d139}\label{class_controller_b_l_user_a27e5d4017b659576bc6b0b77f533d139}} 
+\index{Controller\+B\+L\+User@{Controller\+B\+L\+User}!Controller\+B\+L\+User@{Controller\+B\+L\+User}}
+\index{Controller\+B\+L\+User@{Controller\+B\+L\+User}!Controller\+B\+L\+User@{Controller\+B\+L\+User}}
+\subsubsection{\texorpdfstring{Controller\+B\+L\+User()}{ControllerBLUser()}}
+{\footnotesize\ttfamily Controller\+B\+L\+User\+::\+Controller\+B\+L\+User (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 201 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_b_l_user_aa16e2866d7ca11aa8b5bea2f07e4b379}\label{class_controller_b_l_user_aa16e2866d7ca11aa8b5bea2f07e4b379}} 
+\index{Controller\+B\+L\+User@{Controller\+B\+L\+User}!````~Controller\+B\+L\+User@{$\sim$\+Controller\+B\+L\+User}}
+\index{````~Controller\+B\+L\+User@{$\sim$\+Controller\+B\+L\+User}!Controller\+B\+L\+User@{Controller\+B\+L\+User}}
+\subsubsection{\texorpdfstring{$\sim$\+Controller\+B\+L\+User()}{~ControllerBLUser()}}
+{\footnotesize\ttfamily Controller\+B\+L\+User\+::$\sim$\+Controller\+B\+L\+User (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 202 of file controllers.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_controller_b_l_user_a8fb74fe44753778c8bf820f51737dd76}\label{class_controller_b_l_user_a8fb74fe44753778c8bf820f51737dd76}} 
+\index{Controller\+B\+L\+User@{Controller\+B\+L\+User}!change\+Name@{change\+Name}}
+\index{change\+Name@{change\+Name}!Controller\+B\+L\+User@{Controller\+B\+L\+User}}
+\subsubsection{\texorpdfstring{change\+Name()}{changeName()}}
+{\footnotesize\ttfamily bool Controller\+B\+L\+User\+::change\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{class_user}{User} $\ast$}]{user,  }\item[{const string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao recebe como parametros um ponteiro para uma instancia da classe Usuario e um nome (string) e modifica o nome do usuario para o nome recebido. 
+
+Implements \hyperlink{class_interface_b_l_user_a6bb394145d7e0f97902dcc2570919bb0}{Interface\+B\+L\+User}.
+
+
+
+Definition at line 219 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_b_l_user_a90ac2cdd863f28b57b6e7d27ff4ede0c}\label{class_controller_b_l_user_a90ac2cdd863f28b57b6e7d27ff4ede0c}} 
+\index{Controller\+B\+L\+User@{Controller\+B\+L\+User}!change\+Pass@{change\+Pass}}
+\index{change\+Pass@{change\+Pass}!Controller\+B\+L\+User@{Controller\+B\+L\+User}}
+\subsubsection{\texorpdfstring{change\+Pass()}{changePass()}}
+{\footnotesize\ttfamily bool Controller\+B\+L\+User\+::change\+Pass (\begin{DoxyParamCaption}\item[{\hyperlink{class_user}{User} $\ast$}]{user,  }\item[{const string \&}]{pass,  }\item[{const string \&}]{new\+\_\+pass }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao recebe como parametros um ponteiro para uma instancia da classe Usuario, a senha atual do usuario e uma nova senha, verifica se a senha atual recebida esta correta e, em caso afirmativo, altera a senha. 
+
+Implements \hyperlink{class_interface_b_l_user_a1d683de35fc2d6e65379add3f0a42b61}{Interface\+B\+L\+User}.
+
+
+
+Definition at line 244 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_b_l_user_a2f422b6fdb912d9bec90af7de56e7656}\label{class_controller_b_l_user_a2f422b6fdb912d9bec90af7de56e7656}} 
+\index{Controller\+B\+L\+User@{Controller\+B\+L\+User}!get\+Subjects\+Bank@{get\+Subjects\+Bank}}
+\index{get\+Subjects\+Bank@{get\+Subjects\+Bank}!Controller\+B\+L\+User@{Controller\+B\+L\+User}}
+\subsubsection{\texorpdfstring{get\+Subjects\+Bank()}{getSubjectsBank()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, \hyperlink{class_subject}{Subject} $\ast$ $>$ \& Controller\+B\+L\+User\+::get\+Subjects\+Bank (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao solicita ao modulo de persistencia que recupere o banco de disciplinas cadastradas e retorna o banco recebido. 
+
+Implements \hyperlink{class_interface_b_l_user_a36499250fd10ab2875bbdeb6a0dd4030}{Interface\+B\+L\+User}.
+
+
+
+Definition at line 293 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_b_l_user_acece0a3e60fb4fbf748783f1370e9d79}\label{class_controller_b_l_user_acece0a3e60fb4fbf748783f1370e9d79}} 
+\index{Controller\+B\+L\+User@{Controller\+B\+L\+User}!include\+Subject@{include\+Subject}}
+\index{include\+Subject@{include\+Subject}!Controller\+B\+L\+User@{Controller\+B\+L\+User}}
+\subsubsection{\texorpdfstring{include\+Subject()}{includeSubject()}}
+{\footnotesize\ttfamily void Controller\+B\+L\+User\+::include\+Subject (\begin{DoxyParamCaption}\item[{\hyperlink{class_user}{User} $\ast$}]{user,  }\item[{const string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao solicita ao modulo de persistencia que inclua a disciplina com nome name nas disciplinas do usuario user. 
+
+Implements \hyperlink{class_interface_b_l_user_a6b39f9aa9dff139987d2d6919a78c3d4}{Interface\+B\+L\+User}.
+
+
+
+Definition at line 299 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_b_l_user_aaed19dcb20672c4bfe3c98f18d1c0a2e}\label{class_controller_b_l_user_aaed19dcb20672c4bfe3c98f18d1c0a2e}} 
+\index{Controller\+B\+L\+User@{Controller\+B\+L\+User}!remove\+Subject@{remove\+Subject}}
+\index{remove\+Subject@{remove\+Subject}!Controller\+B\+L\+User@{Controller\+B\+L\+User}}
+\subsubsection{\texorpdfstring{remove\+Subject()}{removeSubject()}}
+{\footnotesize\ttfamily void Controller\+B\+L\+User\+::remove\+Subject (\begin{DoxyParamCaption}\item[{\hyperlink{class_user}{User} $\ast$}]{user,  }\item[{const string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao recebe como parametro um usuario e o nome de uma disciplina e remove a disciplina do usuario. 
+
+Implements \hyperlink{class_interface_b_l_user_a1444133d057934d4905bfcdf0cc4712b}{Interface\+B\+L\+User}.
+
+
+
+Definition at line 337 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_b_l_user_a4594159d854a4bbb2aef17e7ef688821}\label{class_controller_b_l_user_a4594159d854a4bbb2aef17e7ef688821}} 
+\index{Controller\+B\+L\+User@{Controller\+B\+L\+User}!set\+Downstream\+Controller@{set\+Downstream\+Controller}}
+\index{set\+Downstream\+Controller@{set\+Downstream\+Controller}!Controller\+B\+L\+User@{Controller\+B\+L\+User}}
+\subsubsection{\texorpdfstring{set\+Downstream\+Controller()}{setDownstreamController()}}
+{\footnotesize\ttfamily void Controller\+B\+L\+User\+::set\+Downstream\+Controller (\begin{DoxyParamCaption}\item[{\hyperlink{class_stub_p_r}{Stub\+PR} $\ast$}]{controller\+PR }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_interface_b_l_user_ad68d0903bc24cf0fa3538be028831783}{Interface\+B\+L\+User}.
+
+
+
+Definition at line 89 of file controllers.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{controllers_8hpp}{controllers.\+hpp}\item 
+\hyperlink{controllers_8cpp}{controllers.\+cpp}\end{DoxyCompactItemize}

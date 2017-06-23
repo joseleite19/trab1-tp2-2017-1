@@ -1,0 +1,180 @@
+\hypertarget{class_interface_b_l_admin}{}\section{Interface\+B\+L\+Admin Class Reference}
+\label{class_interface_b_l_admin}\index{Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}}
+
+
+Interface do Modulo BL de Admin.  
+
+
+
+
+{\ttfamily \#include $<$interfaces.\+hpp$>$}
+
+
+
+Inherited by \hyperlink{class_controller_b_l_admin}{Controller\+B\+L\+Admin}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{class_interface_b_l_admin_a716e03cae2e978d281f813ea98137191}{include\+Student} (const string \&, const string \&, const string \&, int)=0
+\item 
+virtual std\+::map$<$ std\+::string, \hyperlink{class_user}{User} $\ast$ $>$ \& \hyperlink{class_interface_b_l_admin_a785c49557dc1dd6a955ee12db1bb6925}{get\+User\+Bank} (void)=0
+\item 
+virtual void \hyperlink{class_interface_b_l_admin_ac1e32eeb8d7a76c933024fc639fff67f}{remove\+Student} (\hyperlink{class_user}{User} $\ast$)=0
+\item 
+virtual std\+::map$<$ std\+::string, \hyperlink{class_subject}{Subject} $\ast$ $>$ \& \hyperlink{class_interface_b_l_admin_ace992c81c3ca58363336ff2f7fbbda0b}{get\+Subjects\+Bank} ()=0
+\item 
+virtual bool \hyperlink{class_interface_b_l_admin_aa0b718aa7b0f47adad6601c7470fb8c4}{include\+Subject} (const string \&)=0
+\item 
+virtual bool \hyperlink{class_interface_b_l_admin_aa1d0fe6d4886260d1aa47d7bf73ad9ff}{include\+Topic} (const string \&, \hyperlink{class_subject}{Subject} $\ast$)=0
+\item 
+virtual bool \hyperlink{class_interface_b_l_admin_aca0cf080ee23134183cf70dd094edfe2}{include\+Quiz} (const string \&, std\+::vector$<$ \hyperlink{class_question}{Question} $\ast$$>$, \hyperlink{class_topic}{Topic} $\ast$)=0
+\item 
+virtual void \hyperlink{class_interface_b_l_admin_aed60dd105ebed648c834d57c6b1c9224}{remove\+Subject} (\hyperlink{class_subject}{Subject} $\ast$)=0
+\item 
+virtual void \hyperlink{class_interface_b_l_admin_a9ec942ebf3eb4a742de514801a378aca}{remove\+Topic} (\hyperlink{class_topic}{Topic} $\ast$, \hyperlink{class_subject}{Subject} $\ast$)=0
+\item 
+virtual void \hyperlink{class_interface_b_l_admin_a5e0da435e49e43b169b13725df5a354a}{remove\+Quiz} (\hyperlink{class_quiz}{Quiz} $\ast$, \hyperlink{class_topic}{Topic} $\ast$, \hyperlink{class_subject}{Subject} $\ast$)=0
+\item 
+virtual void \hyperlink{class_interface_b_l_admin_abe950882707e9b393dd989af66ab2f9f}{set\+Downstream\+Controller} (\hyperlink{class_stub_p_r}{Stub\+PR} $\ast$)=0
+\item 
+virtual \hyperlink{class_interface_b_l_admin_a4e4c51ea35af8630cb8e5a52f9c021a0}{$\sim$\+Interface\+B\+L\+Admin} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface do Modulo BL de Admin. 
+
+Definition at line 91 of file interfaces.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_interface_b_l_admin_a4e4c51ea35af8630cb8e5a52f9c021a0}\label{class_interface_b_l_admin_a4e4c51ea35af8630cb8e5a52f9c021a0}} 
+\index{Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}!````~Interface\+B\+L\+Admin@{$\sim$\+Interface\+B\+L\+Admin}}
+\index{````~Interface\+B\+L\+Admin@{$\sim$\+Interface\+B\+L\+Admin}!Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{$\sim$\+Interface\+B\+L\+Admin()}{~InterfaceBLAdmin()}}
+{\footnotesize\ttfamily virtual Interface\+B\+L\+Admin\+::$\sim$\+Interface\+B\+L\+Admin (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 105 of file interfaces.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_interface_b_l_admin_ace992c81c3ca58363336ff2f7fbbda0b}\label{class_interface_b_l_admin_ace992c81c3ca58363336ff2f7fbbda0b}} 
+\index{Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}!get\+Subjects\+Bank@{get\+Subjects\+Bank}}
+\index{get\+Subjects\+Bank@{get\+Subjects\+Bank}!Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{get\+Subjects\+Bank()}{getSubjectsBank()}}
+{\footnotesize\ttfamily virtual std\+::map$<$std\+::string,\hyperlink{class_subject}{Subject}$\ast$$>$\& Interface\+B\+L\+Admin\+::get\+Subjects\+Bank (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_controller_b_l_admin_a86f1e998ca81cc440594d62e60fc1ed9}{Controller\+B\+L\+Admin}.
+
+\mbox{\Hypertarget{class_interface_b_l_admin_a785c49557dc1dd6a955ee12db1bb6925}\label{class_interface_b_l_admin_a785c49557dc1dd6a955ee12db1bb6925}} 
+\index{Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}!get\+User\+Bank@{get\+User\+Bank}}
+\index{get\+User\+Bank@{get\+User\+Bank}!Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{get\+User\+Bank()}{getUserBank()}}
+{\footnotesize\ttfamily virtual std\+::map$<$std\+::string,\hyperlink{class_user}{User}$\ast$$>$\& Interface\+B\+L\+Admin\+::get\+User\+Bank (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_controller_b_l_admin_add75e8118f5e4f37775edfcb104281aa}{Controller\+B\+L\+Admin}.
+
+\mbox{\Hypertarget{class_interface_b_l_admin_aca0cf080ee23134183cf70dd094edfe2}\label{class_interface_b_l_admin_aca0cf080ee23134183cf70dd094edfe2}} 
+\index{Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}!include\+Quiz@{include\+Quiz}}
+\index{include\+Quiz@{include\+Quiz}!Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{include\+Quiz()}{includeQuiz()}}
+{\footnotesize\ttfamily virtual bool Interface\+B\+L\+Admin\+::include\+Quiz (\begin{DoxyParamCaption}\item[{const string \&}]{,  }\item[{std\+::vector$<$ \hyperlink{class_question}{Question} $\ast$$>$}]{,  }\item[{\hyperlink{class_topic}{Topic} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_controller_b_l_admin_a995da6bb9402ddb388794ff6410aebe5}{Controller\+B\+L\+Admin}.
+
+\mbox{\Hypertarget{class_interface_b_l_admin_a716e03cae2e978d281f813ea98137191}\label{class_interface_b_l_admin_a716e03cae2e978d281f813ea98137191}} 
+\index{Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}!include\+Student@{include\+Student}}
+\index{include\+Student@{include\+Student}!Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{include\+Student()}{includeStudent()}}
+{\footnotesize\ttfamily virtual bool Interface\+B\+L\+Admin\+::include\+Student (\begin{DoxyParamCaption}\item[{const string \&}]{,  }\item[{const string \&}]{,  }\item[{const string \&}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_controller_b_l_admin_a6e077c2cf0d0420c4104a637e930b764}{Controller\+B\+L\+Admin}.
+
+\mbox{\Hypertarget{class_interface_b_l_admin_aa0b718aa7b0f47adad6601c7470fb8c4}\label{class_interface_b_l_admin_aa0b718aa7b0f47adad6601c7470fb8c4}} 
+\index{Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}!include\+Subject@{include\+Subject}}
+\index{include\+Subject@{include\+Subject}!Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{include\+Subject()}{includeSubject()}}
+{\footnotesize\ttfamily virtual bool Interface\+B\+L\+Admin\+::include\+Subject (\begin{DoxyParamCaption}\item[{const string \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_controller_b_l_admin_a6c78d14f6b7fa350a63c5dbb2ac31084}{Controller\+B\+L\+Admin}.
+
+\mbox{\Hypertarget{class_interface_b_l_admin_aa1d0fe6d4886260d1aa47d7bf73ad9ff}\label{class_interface_b_l_admin_aa1d0fe6d4886260d1aa47d7bf73ad9ff}} 
+\index{Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}!include\+Topic@{include\+Topic}}
+\index{include\+Topic@{include\+Topic}!Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{include\+Topic()}{includeTopic()}}
+{\footnotesize\ttfamily virtual bool Interface\+B\+L\+Admin\+::include\+Topic (\begin{DoxyParamCaption}\item[{const string \&}]{,  }\item[{\hyperlink{class_subject}{Subject} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_controller_b_l_admin_abec5332aa0ecec899ea7ea814c2b2f5e}{Controller\+B\+L\+Admin}.
+
+\mbox{\Hypertarget{class_interface_b_l_admin_a5e0da435e49e43b169b13725df5a354a}\label{class_interface_b_l_admin_a5e0da435e49e43b169b13725df5a354a}} 
+\index{Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}!remove\+Quiz@{remove\+Quiz}}
+\index{remove\+Quiz@{remove\+Quiz}!Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{remove\+Quiz()}{removeQuiz()}}
+{\footnotesize\ttfamily virtual void Interface\+B\+L\+Admin\+::remove\+Quiz (\begin{DoxyParamCaption}\item[{\hyperlink{class_quiz}{Quiz} $\ast$}]{,  }\item[{\hyperlink{class_topic}{Topic} $\ast$}]{,  }\item[{\hyperlink{class_subject}{Subject} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_controller_b_l_admin_ad5536394e16e953f2a68e04be748dbd3}{Controller\+B\+L\+Admin}.
+
+\mbox{\Hypertarget{class_interface_b_l_admin_ac1e32eeb8d7a76c933024fc639fff67f}\label{class_interface_b_l_admin_ac1e32eeb8d7a76c933024fc639fff67f}} 
+\index{Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}!remove\+Student@{remove\+Student}}
+\index{remove\+Student@{remove\+Student}!Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{remove\+Student()}{removeStudent()}}
+{\footnotesize\ttfamily virtual void Interface\+B\+L\+Admin\+::remove\+Student (\begin{DoxyParamCaption}\item[{\hyperlink{class_user}{User} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_controller_b_l_admin_ad504705ce46509672751a4adfe1fa773}{Controller\+B\+L\+Admin}.
+
+\mbox{\Hypertarget{class_interface_b_l_admin_aed60dd105ebed648c834d57c6b1c9224}\label{class_interface_b_l_admin_aed60dd105ebed648c834d57c6b1c9224}} 
+\index{Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}!remove\+Subject@{remove\+Subject}}
+\index{remove\+Subject@{remove\+Subject}!Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{remove\+Subject()}{removeSubject()}}
+{\footnotesize\ttfamily virtual void Interface\+B\+L\+Admin\+::remove\+Subject (\begin{DoxyParamCaption}\item[{\hyperlink{class_subject}{Subject} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_controller_b_l_admin_ab6be786a6347283943640ccba01ac2d1}{Controller\+B\+L\+Admin}.
+
+\mbox{\Hypertarget{class_interface_b_l_admin_a9ec942ebf3eb4a742de514801a378aca}\label{class_interface_b_l_admin_a9ec942ebf3eb4a742de514801a378aca}} 
+\index{Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}!remove\+Topic@{remove\+Topic}}
+\index{remove\+Topic@{remove\+Topic}!Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{remove\+Topic()}{removeTopic()}}
+{\footnotesize\ttfamily virtual void Interface\+B\+L\+Admin\+::remove\+Topic (\begin{DoxyParamCaption}\item[{\hyperlink{class_topic}{Topic} $\ast$}]{,  }\item[{\hyperlink{class_subject}{Subject} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_controller_b_l_admin_a615837120d6e4ba94fa32f13d2e8fac1}{Controller\+B\+L\+Admin}.
+
+\mbox{\Hypertarget{class_interface_b_l_admin_abe950882707e9b393dd989af66ab2f9f}\label{class_interface_b_l_admin_abe950882707e9b393dd989af66ab2f9f}} 
+\index{Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}!set\+Downstream\+Controller@{set\+Downstream\+Controller}}
+\index{set\+Downstream\+Controller@{set\+Downstream\+Controller}!Interface\+B\+L\+Admin@{Interface\+B\+L\+Admin}}
+\subsubsection{\texorpdfstring{set\+Downstream\+Controller()}{setDownstreamController()}}
+{\footnotesize\ttfamily virtual void Interface\+B\+L\+Admin\+::set\+Downstream\+Controller (\begin{DoxyParamCaption}\item[{\hyperlink{class_stub_p_r}{Stub\+PR} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_controller_b_l_admin_a372a88e17194ff8c2224f50b2862f35d}{Controller\+B\+L\+Admin}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interfaces_8hpp}{interfaces.\+hpp}\end{DoxyCompactItemize}

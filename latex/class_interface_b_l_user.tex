@@ -1,0 +1,120 @@
+\hypertarget{class_interface_b_l_user}{}\section{Interface\+B\+L\+User Class Reference}
+\label{class_interface_b_l_user}\index{Interface\+B\+L\+User@{Interface\+B\+L\+User}}
+
+
+Interface do Modulo BL de Usuario.  
+
+
+
+
+{\ttfamily \#include $<$interfaces.\+hpp$>$}
+
+
+
+Inherited by \hyperlink{class_controller_b_l_user}{Controller\+B\+L\+User}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{class_interface_b_l_user_a6bb394145d7e0f97902dcc2570919bb0}{change\+Name} (\hyperlink{class_user}{User} $\ast$, const string \&)=0
+\item 
+virtual bool \hyperlink{class_interface_b_l_user_a1d683de35fc2d6e65379add3f0a42b61}{change\+Pass} (\hyperlink{class_user}{User} $\ast$, const string \&, const string \&)=0
+\item 
+virtual std\+::map$<$ std\+::string, \hyperlink{class_subject}{Subject} $\ast$ $>$ \& \hyperlink{class_interface_b_l_user_a36499250fd10ab2875bbdeb6a0dd4030}{get\+Subjects\+Bank} (void)=0
+\item 
+virtual void \hyperlink{class_interface_b_l_user_a6b39f9aa9dff139987d2d6919a78c3d4}{include\+Subject} (\hyperlink{class_user}{User} $\ast$, const string \&)=0
+\item 
+virtual void \hyperlink{class_interface_b_l_user_a1444133d057934d4905bfcdf0cc4712b}{remove\+Subject} (\hyperlink{class_user}{User} $\ast$, const string \&)=0
+\item 
+virtual void \hyperlink{class_interface_b_l_user_ad68d0903bc24cf0fa3538be028831783}{set\+Downstream\+Controller} (\hyperlink{class_stub_p_r}{Stub\+PR} $\ast$)=0
+\item 
+virtual \hyperlink{class_interface_b_l_user_aa48647da4d55e385e5cead19becc1b65}{$\sim$\+Interface\+B\+L\+User} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface do Modulo BL de Usuario. 
+
+Definition at line 62 of file interfaces.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_interface_b_l_user_aa48647da4d55e385e5cead19becc1b65}\label{class_interface_b_l_user_aa48647da4d55e385e5cead19becc1b65}} 
+\index{Interface\+B\+L\+User@{Interface\+B\+L\+User}!````~Interface\+B\+L\+User@{$\sim$\+Interface\+B\+L\+User}}
+\index{````~Interface\+B\+L\+User@{$\sim$\+Interface\+B\+L\+User}!Interface\+B\+L\+User@{Interface\+B\+L\+User}}
+\subsubsection{\texorpdfstring{$\sim$\+Interface\+B\+L\+User()}{~InterfaceBLUser()}}
+{\footnotesize\ttfamily virtual Interface\+B\+L\+User\+::$\sim$\+Interface\+B\+L\+User (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 70 of file interfaces.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_interface_b_l_user_a6bb394145d7e0f97902dcc2570919bb0}\label{class_interface_b_l_user_a6bb394145d7e0f97902dcc2570919bb0}} 
+\index{Interface\+B\+L\+User@{Interface\+B\+L\+User}!change\+Name@{change\+Name}}
+\index{change\+Name@{change\+Name}!Interface\+B\+L\+User@{Interface\+B\+L\+User}}
+\subsubsection{\texorpdfstring{change\+Name()}{changeName()}}
+{\footnotesize\ttfamily virtual bool Interface\+B\+L\+User\+::change\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{class_user}{User} $\ast$}]{,  }\item[{const string \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_controller_b_l_user_a8fb74fe44753778c8bf820f51737dd76}{Controller\+B\+L\+User}.
+
+\mbox{\Hypertarget{class_interface_b_l_user_a1d683de35fc2d6e65379add3f0a42b61}\label{class_interface_b_l_user_a1d683de35fc2d6e65379add3f0a42b61}} 
+\index{Interface\+B\+L\+User@{Interface\+B\+L\+User}!change\+Pass@{change\+Pass}}
+\index{change\+Pass@{change\+Pass}!Interface\+B\+L\+User@{Interface\+B\+L\+User}}
+\subsubsection{\texorpdfstring{change\+Pass()}{changePass()}}
+{\footnotesize\ttfamily virtual bool Interface\+B\+L\+User\+::change\+Pass (\begin{DoxyParamCaption}\item[{\hyperlink{class_user}{User} $\ast$}]{,  }\item[{const string \&}]{,  }\item[{const string \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_controller_b_l_user_a90ac2cdd863f28b57b6e7d27ff4ede0c}{Controller\+B\+L\+User}.
+
+\mbox{\Hypertarget{class_interface_b_l_user_a36499250fd10ab2875bbdeb6a0dd4030}\label{class_interface_b_l_user_a36499250fd10ab2875bbdeb6a0dd4030}} 
+\index{Interface\+B\+L\+User@{Interface\+B\+L\+User}!get\+Subjects\+Bank@{get\+Subjects\+Bank}}
+\index{get\+Subjects\+Bank@{get\+Subjects\+Bank}!Interface\+B\+L\+User@{Interface\+B\+L\+User}}
+\subsubsection{\texorpdfstring{get\+Subjects\+Bank()}{getSubjectsBank()}}
+{\footnotesize\ttfamily virtual std\+::map$<$std\+::string,\hyperlink{class_subject}{Subject}$\ast$$>$\& Interface\+B\+L\+User\+::get\+Subjects\+Bank (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_controller_b_l_user_a2f422b6fdb912d9bec90af7de56e7656}{Controller\+B\+L\+User}.
+
+\mbox{\Hypertarget{class_interface_b_l_user_a6b39f9aa9dff139987d2d6919a78c3d4}\label{class_interface_b_l_user_a6b39f9aa9dff139987d2d6919a78c3d4}} 
+\index{Interface\+B\+L\+User@{Interface\+B\+L\+User}!include\+Subject@{include\+Subject}}
+\index{include\+Subject@{include\+Subject}!Interface\+B\+L\+User@{Interface\+B\+L\+User}}
+\subsubsection{\texorpdfstring{include\+Subject()}{includeSubject()}}
+{\footnotesize\ttfamily virtual void Interface\+B\+L\+User\+::include\+Subject (\begin{DoxyParamCaption}\item[{\hyperlink{class_user}{User} $\ast$}]{,  }\item[{const string \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_controller_b_l_user_acece0a3e60fb4fbf748783f1370e9d79}{Controller\+B\+L\+User}.
+
+\mbox{\Hypertarget{class_interface_b_l_user_a1444133d057934d4905bfcdf0cc4712b}\label{class_interface_b_l_user_a1444133d057934d4905bfcdf0cc4712b}} 
+\index{Interface\+B\+L\+User@{Interface\+B\+L\+User}!remove\+Subject@{remove\+Subject}}
+\index{remove\+Subject@{remove\+Subject}!Interface\+B\+L\+User@{Interface\+B\+L\+User}}
+\subsubsection{\texorpdfstring{remove\+Subject()}{removeSubject()}}
+{\footnotesize\ttfamily virtual void Interface\+B\+L\+User\+::remove\+Subject (\begin{DoxyParamCaption}\item[{\hyperlink{class_user}{User} $\ast$}]{,  }\item[{const string \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_controller_b_l_user_aaed19dcb20672c4bfe3c98f18d1c0a2e}{Controller\+B\+L\+User}.
+
+\mbox{\Hypertarget{class_interface_b_l_user_ad68d0903bc24cf0fa3538be028831783}\label{class_interface_b_l_user_ad68d0903bc24cf0fa3538be028831783}} 
+\index{Interface\+B\+L\+User@{Interface\+B\+L\+User}!set\+Downstream\+Controller@{set\+Downstream\+Controller}}
+\index{set\+Downstream\+Controller@{set\+Downstream\+Controller}!Interface\+B\+L\+User@{Interface\+B\+L\+User}}
+\subsubsection{\texorpdfstring{set\+Downstream\+Controller()}{setDownstreamController()}}
+{\footnotesize\ttfamily virtual void Interface\+B\+L\+User\+::set\+Downstream\+Controller (\begin{DoxyParamCaption}\item[{\hyperlink{class_stub_p_r}{Stub\+PR} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_controller_b_l_user_a4594159d854a4bbb2aef17e7ef688821}{Controller\+B\+L\+User}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interfaces_8hpp}{interfaces.\+hpp}\end{DoxyCompactItemize}

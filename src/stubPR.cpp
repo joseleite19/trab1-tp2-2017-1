@@ -1,3 +1,10 @@
+/**
+/*
+*   @author cftpontes
+*   @since 09/05/2017
+*   @version 3.0
+*/
+
 #include "user.hpp"
 #include "stubPR.hpp"
 #include "subject.hpp"

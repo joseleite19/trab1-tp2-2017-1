@@ -1,0 +1,153 @@
+\hypertarget{class_subject}{}\section{Subject Class Reference}
+\label{class_subject}\index{Subject@{Subject}}
+
+
+Responsavel por adicionar novos topicos e mostrar topicos existentes de uma disciplina.  
+
+
+
+
+{\ttfamily \#include $<$subject.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_subject_ad81aadc033a880e7cde2c10daf34ea2f}{get\+Name} () const
+\item 
+void \hyperlink{class_subject_a9d3ec013f7c71f428f1118257785f890}{set\+Name} (std\+::string new\+\_\+name)
+\item 
+void \hyperlink{class_subject_a784773913acee5fdef548bc9cd7e8aca}{add\+Topic} (\hyperlink{class_topic}{Topic})
+\begin{DoxyCompactList}\small\item\em Adiciona novo topico na disciplina. \end{DoxyCompactList}\item 
+void \hyperlink{class_subject_ab9f2b4494496feb662d69aac64e5e61c}{show\+Topics} (int user\+\_\+id) const
+\item 
+const std\+::vector$<$ \hyperlink{class_topic}{Topic} $>$ \& \hyperlink{class_subject_ab50189ef9c4edf65cf9218f5d956bf4b}{get\+Topics} () const
+\item 
+\hyperlink{class_subject_aadd211855155af3c49b6907520d77675}{Subject} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em /$\ast$ \end{DoxyCompactList}\item 
+\hyperlink{class_subject_a7c4f522850f718466e5be7eb55ba1969}{$\sim$\+Subject} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Responsavel por adicionar novos topicos e mostrar topicos existentes de uma disciplina. 
+
+\begin{DoxyAuthor}{Author}
+Angelic\+Coder 
+\end{DoxyAuthor}
+\begin{DoxySince}{Since}
+08/05/2017 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+2.\+0 
+\end{DoxyVersion}
+
+
+Definition at line 17 of file subject.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_subject_aadd211855155af3c49b6907520d77675}\label{class_subject_aadd211855155af3c49b6907520d77675}} 
+\index{Subject@{Subject}!Subject@{Subject}}
+\index{Subject@{Subject}!Subject@{Subject}}
+\subsubsection{\texorpdfstring{Subject()}{Subject()}}
+{\footnotesize\ttfamily Subject\+::\+Subject (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+/$\ast$ 
+
+\begin{DoxyAuthor}{Author}
+Angelic\+Coder 
+\end{DoxyAuthor}
+\begin{DoxySince}{Since}
+08/05/2017 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+2.\+0 
+\end{DoxyVersion}
+
+
+Definition at line 14 of file subject.\+cpp.
+
+\mbox{\Hypertarget{class_subject_a7c4f522850f718466e5be7eb55ba1969}\label{class_subject_a7c4f522850f718466e5be7eb55ba1969}} 
+\index{Subject@{Subject}!````~Subject@{$\sim$\+Subject}}
+\index{````~Subject@{$\sim$\+Subject}!Subject@{Subject}}
+\subsubsection{\texorpdfstring{$\sim$\+Subject()}{~Subject()}}
+{\footnotesize\ttfamily Subject\+::$\sim$\+Subject (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 18 of file subject.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_subject_a784773913acee5fdef548bc9cd7e8aca}\label{class_subject_a784773913acee5fdef548bc9cd7e8aca}} 
+\index{Subject@{Subject}!add\+Topic@{add\+Topic}}
+\index{add\+Topic@{add\+Topic}!Subject@{Subject}}
+\subsubsection{\texorpdfstring{add\+Topic()}{addTopic()}}
+{\footnotesize\ttfamily void Subject\+::add\+Topic (\begin{DoxyParamCaption}\item[{\hyperlink{class_topic}{Topic}}]{topic }\end{DoxyParamCaption})}
+
+
+
+Adiciona novo topico na disciplina. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Um} & vetor \hyperlink{class_topic}{Topic} contendo os topicos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorno vazio. 
+\end{DoxyReturn}
+
+
+Definition at line 30 of file subject.\+cpp.
+
+\mbox{\Hypertarget{class_subject_ad81aadc033a880e7cde2c10daf34ea2f}\label{class_subject_ad81aadc033a880e7cde2c10daf34ea2f}} 
+\index{Subject@{Subject}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Subject@{Subject}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily std\+::string Subject\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 26 of file subject.\+cpp.
+
+\mbox{\Hypertarget{class_subject_ab50189ef9c4edf65cf9218f5d956bf4b}\label{class_subject_ab50189ef9c4edf65cf9218f5d956bf4b}} 
+\index{Subject@{Subject}!get\+Topics@{get\+Topics}}
+\index{get\+Topics@{get\+Topics}!Subject@{Subject}}
+\subsubsection{\texorpdfstring{get\+Topics()}{getTopics()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \hyperlink{class_topic}{Topic} $>$ \& Subject\+::get\+Topics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 40 of file subject.\+cpp.
+
+\mbox{\Hypertarget{class_subject_a9d3ec013f7c71f428f1118257785f890}\label{class_subject_a9d3ec013f7c71f428f1118257785f890}} 
+\index{Subject@{Subject}!set\+Name@{set\+Name}}
+\index{set\+Name@{set\+Name}!Subject@{Subject}}
+\subsubsection{\texorpdfstring{set\+Name()}{setName()}}
+{\footnotesize\ttfamily void Subject\+::set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{new\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file subject.\+cpp.
+
+\mbox{\Hypertarget{class_subject_ab9f2b4494496feb662d69aac64e5e61c}\label{class_subject_ab9f2b4494496feb662d69aac64e5e61c}} 
+\index{Subject@{Subject}!show\+Topics@{show\+Topics}}
+\index{show\+Topics@{show\+Topics}!Subject@{Subject}}
+\subsubsection{\texorpdfstring{show\+Topics()}{showTopics()}}
+{\footnotesize\ttfamily void Subject\+::show\+Topics (\begin{DoxyParamCaption}\item[{int}]{user\+\_\+id }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 34 of file subject.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{subject_8hpp}{subject.\+hpp}\item 
+\hyperlink{subject_8cpp}{subject.\+cpp}\end{DoxyCompactItemize}

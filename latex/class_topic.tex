@@ -1,0 +1,188 @@
+\hypertarget{class_topic}{}\section{Topic Class Reference}
+\label{class_topic}\index{Topic@{Topic}}
+
+
+\hyperlink{class_topic}{Topic} eh a classe dos topicos de cada disciplina.  
+
+
+
+
+{\ttfamily \#include $<$topic.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_topic_a59c3acc27552cb2f773abe1356181e49}{Topic} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Construtor, cria um novo topico com o nome n. \end{DoxyCompactList}\item 
+\hyperlink{class_topic_a8387ddd8ffe87e287c71380af0f45227}{$\sim$\+Topic} ()
+\item 
+std\+::string \hyperlink{class_topic_abfa1c71514a02be44f46aa16b5190479}{get\+Name} () const
+\item 
+void \hyperlink{class_topic_aee887f16cd1117e4b2f94b79e4f1b8ea}{set\+Name} (std\+::string new\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Funcao que coloca novo nome pra determinado topico. \end{DoxyCompactList}\item 
+void \hyperlink{class_topic_a7c7566c0a60e700e4550030530fe7495}{add\+Quiz} (\hyperlink{class_quiz}{Quiz})
+\item 
+void \hyperlink{class_topic_afd8a1e80d1253a6b504e69946d6c44f3}{show\+Quizzes} (int user\+\_\+id) const
+\begin{DoxyCompactList}\small\item\em Funcao que mostra todos os quizzes relacionados a determinado topico/disciplina. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \hyperlink{class_quiz}{Quiz} $>$ \& \hyperlink{class_topic_a18c9b2e48f1eb242c3b1fc17938a8efe}{get\+Quizes} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_topic}{Topic} eh a classe dos topicos de cada disciplina. 
+
+Mostra os topicos relacionados a cada quizz, alem de poder adicionar novo quiz e mudar nome de um topico de uma disciplina. \begin{DoxyAuthor}{Author}
+Angelic\+Coder 
+\end{DoxyAuthor}
+\begin{DoxySince}{Since}
+08/05/2017 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+2.\+0 
+\end{DoxyVersion}
+
+
+Definition at line 17 of file topic.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_topic_a59c3acc27552cb2f773abe1356181e49}\label{class_topic_a59c3acc27552cb2f773abe1356181e49}} 
+\index{Topic@{Topic}!Topic@{Topic}}
+\index{Topic@{Topic}!Topic@{Topic}}
+\subsubsection{\texorpdfstring{Topic()}{Topic()}}
+{\footnotesize\ttfamily Topic\+::\+Topic (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Construtor, cria um novo topico com o nome n. 
+
+/$\ast$
+
+
+\begin{DoxyParams}{Parameters}
+{\em uma} & string que sera o nome do topico.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Angelic\+Coder 
+\end{DoxyAuthor}
+\begin{DoxySince}{Since}
+08/05/2017 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+2.\+0 
+\end{DoxyVersion}
+
+
+Definition at line 14 of file topic.\+cpp.
+
+\mbox{\Hypertarget{class_topic_a8387ddd8ffe87e287c71380af0f45227}\label{class_topic_a8387ddd8ffe87e287c71380af0f45227}} 
+\index{Topic@{Topic}!````~Topic@{$\sim$\+Topic}}
+\index{````~Topic@{$\sim$\+Topic}!Topic@{Topic}}
+\subsubsection{\texorpdfstring{$\sim$\+Topic()}{~Topic()}}
+{\footnotesize\ttfamily Topic\+::$\sim$\+Topic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 18 of file topic.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_topic_a7c7566c0a60e700e4550030530fe7495}\label{class_topic_a7c7566c0a60e700e4550030530fe7495}} 
+\index{Topic@{Topic}!add\+Quiz@{add\+Quiz}}
+\index{add\+Quiz@{add\+Quiz}!Topic@{Topic}}
+\subsubsection{\texorpdfstring{add\+Quiz()}{addQuiz()}}
+{\footnotesize\ttfamily void Topic\+::add\+Quiz (\begin{DoxyParamCaption}\item[{\hyperlink{class_quiz}{Quiz}}]{quiz }\end{DoxyParamCaption})}
+
+
+
+Definition at line 30 of file topic.\+cpp.
+
+\mbox{\Hypertarget{class_topic_abfa1c71514a02be44f46aa16b5190479}\label{class_topic_abfa1c71514a02be44f46aa16b5190479}} 
+\index{Topic@{Topic}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Topic@{Topic}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily std\+::string Topic\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 22 of file topic.\+cpp.
+
+\mbox{\Hypertarget{class_topic_a18c9b2e48f1eb242c3b1fc17938a8efe}\label{class_topic_a18c9b2e48f1eb242c3b1fc17938a8efe}} 
+\index{Topic@{Topic}!get\+Quizes@{get\+Quizes}}
+\index{get\+Quizes@{get\+Quizes}!Topic@{Topic}}
+\subsubsection{\texorpdfstring{get\+Quizes()}{getQuizes()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \hyperlink{class_quiz}{Quiz} $>$ \& Topic\+::get\+Quizes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 46 of file topic.\+cpp.
+
+\mbox{\Hypertarget{class_topic_aee887f16cd1117e4b2f94b79e4f1b8ea}\label{class_topic_aee887f16cd1117e4b2f94b79e4f1b8ea}} 
+\index{Topic@{Topic}!set\+Name@{set\+Name}}
+\index{set\+Name@{set\+Name}!Topic@{Topic}}
+\subsubsection{\texorpdfstring{set\+Name()}{setName()}}
+{\footnotesize\ttfamily void Topic\+::set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{new\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Funcao que coloca novo nome pra determinado topico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uma} & string que representa o nome. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vazio. 
+\end{DoxyReturn}
+
+
+Definition at line 26 of file topic.\+cpp.
+
+\mbox{\Hypertarget{class_topic_afd8a1e80d1253a6b504e69946d6c44f3}\label{class_topic_afd8a1e80d1253a6b504e69946d6c44f3}} 
+\index{Topic@{Topic}!show\+Quizzes@{show\+Quizzes}}
+\index{show\+Quizzes@{show\+Quizzes}!Topic@{Topic}}
+\subsubsection{\texorpdfstring{show\+Quizzes()}{showQuizzes()}}
+{\footnotesize\ttfamily void Topic\+::show\+Quizzes (\begin{DoxyParamCaption}\item[{int}]{user\+\_\+id }\end{DoxyParamCaption}) const}
+
+
+
+Funcao que mostra todos os quizzes relacionados a determinado topico/disciplina. 
+
+Função que mostra os quizzes de um determinado tópico de uma disciplina.
+
+
+\begin{DoxyParams}{Parameters}
+{\em um} & inteiro que representa o id do usuario. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+quiz.\+run() 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+vazio.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em um} & inteiro que representa o id do usuário. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+quiz.\+run() 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+vazio. 
+\end{DoxyReturn}
+
+
+Definition at line 40 of file topic.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{topic_8hpp}{topic.\+hpp}\item 
+\hyperlink{topic_8cpp}{topic.\+cpp}\end{DoxyCompactItemize}

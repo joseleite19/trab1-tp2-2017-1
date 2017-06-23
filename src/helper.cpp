@@ -1,3 +1,10 @@
+/**
+/*
+*   @author joseleite19
+*   @since 07/05/2017
+*   @version 3.0
+*/
+
 #include "helper.hpp"
 
 #include <list>

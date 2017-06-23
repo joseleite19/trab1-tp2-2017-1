@@ -1,3 +1,11 @@
+/**
+/*
+*   @author joseleite19
+*   @since 07/05/2017
+*   @version 3.0
+*/
+
+
 #include "quiz.hpp"
 
 #include <vector>
@@ -30,18 +38,17 @@ void Quiz::addQuestion(Question question) {
 }
 
 void Quiz::run(int user_id) const{
-
 	int pts = 0;
     char ans;
     char buffer[64];
 
-	for(int i=1; i<10; i++){
+	for(int i = 1; i < 10; i++){
         system(CLEAR);
         printf("Questao %d: ", i);
 		questions[i].show();
         printf("\n1. Responder\n");
         printf("0. Pular\n");
-		// menu: 1 = responder; 0 = pular; -1 = sair
+		/** menu: 1 = responder; 0 = pular; -1 = sair. */
         printf("Selecione a opcao desejada: ");
 		int op = readIntInRange(0, 1);
 		if(op == 0) i = i;
@@ -58,10 +65,9 @@ void Quiz::run(int user_id) const{
 	}
     system(CLEAR);
     printf("\nQuantidade de respostas corretas: %d\n", pts);
-    getchar();
-    getchar();
+    while(getchar() != '\n');
 
-	// aqui a pessoa terminou de fazer o Quiz
+	/** Aqui a pessoa terminou de fazer o Quiz. */
 
 }
 

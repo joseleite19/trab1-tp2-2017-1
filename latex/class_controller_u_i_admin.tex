@@ -1,0 +1,237 @@
+\hypertarget{class_controller_u_i_admin}{}\section{Controller\+U\+I\+Admin Class Reference}
+\label{class_controller_u_i_admin}\index{Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}}
+
+
+A\+D\+M\+IN.  
+
+
+
+
+{\ttfamily \#include $<$controllers.\+hpp$>$}
+
+
+
+Inherits \hyperlink{class_interface_u_i_admin}{Interface\+U\+I\+Admin}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_controller_u_i_admin_ad77ca0f143bc938b48198d91b1be031b}{manage\+Students} ()
+\item 
+void \hyperlink{class_controller_u_i_admin_abe57cd3860f99ae9ee0023bdb9ccd6b1}{include\+Student} ()
+\item 
+void \hyperlink{class_controller_u_i_admin_a4487c7bf31acf5637e15e62af131b550}{remove\+Student} ()
+\item 
+void \hyperlink{class_controller_u_i_admin_a1e09e8b10c0f2261e307d9e9023daaa4}{manage\+Subjects} ()
+\item 
+void \hyperlink{class_controller_u_i_admin_a7c31484c26788da7ea3d551bbf9f82f8}{include\+Subject} ()
+\item 
+void \hyperlink{class_controller_u_i_admin_adb83b8e77cde718af7571e4d256b6b63}{include\+Topic} ()
+\item 
+void \hyperlink{class_controller_u_i_admin_a9867df3728ad7e8c663a3b999e96a441}{include\+Quiz} ()
+\item 
+void \hyperlink{class_controller_u_i_admin_a7799d896fb475d2731843c6a67db3390}{remove\+Subject} ()
+\item 
+void \hyperlink{class_controller_u_i_admin_aad9b0c9e945e3075bb8eb25b55378f27}{remove\+Topic} ()
+\item 
+void \hyperlink{class_controller_u_i_admin_aeb774e2a137c65593cbe4c3ed22ffe64}{remove\+Quiz} ()
+\item 
+void \hyperlink{class_controller_u_i_admin_aad33fe10f31f698f1bf0343aa5b2b7ec}{set\+Downstream\+Controller} (\hyperlink{class_interface_b_l_admin}{Interface\+B\+L\+Admin} $\ast$controller\+BL)
+\item 
+\hyperlink{class_controller_u_i_admin_a53eae99487a6aadfb303aaacc3c975eb}{Controller\+U\+I\+Admin} ()
+\item 
+\hyperlink{class_controller_u_i_admin_aaaeea4ce8d4e357a4121b7c59a0e1288}{$\sim$\+Controller\+U\+I\+Admin} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+D\+M\+IN. 
+
+Definition at line 96 of file controllers.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_controller_u_i_admin_a53eae99487a6aadfb303aaacc3c975eb}\label{class_controller_u_i_admin_a53eae99487a6aadfb303aaacc3c975eb}} 
+\index{Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}!Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}}
+\index{Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}!Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}}
+\subsubsection{\texorpdfstring{Controller\+U\+I\+Admin()}{ControllerUIAdmin()}}
+{\footnotesize\ttfamily Controller\+U\+I\+Admin\+::\+Controller\+U\+I\+Admin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 345 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_u_i_admin_aaaeea4ce8d4e357a4121b7c59a0e1288}\label{class_controller_u_i_admin_aaaeea4ce8d4e357a4121b7c59a0e1288}} 
+\index{Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}!````~Controller\+U\+I\+Admin@{$\sim$\+Controller\+U\+I\+Admin}}
+\index{````~Controller\+U\+I\+Admin@{$\sim$\+Controller\+U\+I\+Admin}!Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}}
+\subsubsection{\texorpdfstring{$\sim$\+Controller\+U\+I\+Admin()}{~ControllerUIAdmin()}}
+{\footnotesize\ttfamily Controller\+U\+I\+Admin\+::$\sim$\+Controller\+U\+I\+Admin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 346 of file controllers.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_controller_u_i_admin_a9867df3728ad7e8c663a3b999e96a441}\label{class_controller_u_i_admin_a9867df3728ad7e8c663a3b999e96a441}} 
+\index{Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}!include\+Quiz@{include\+Quiz}}
+\index{include\+Quiz@{include\+Quiz}!Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}}
+\subsubsection{\texorpdfstring{include\+Quiz()}{includeQuiz()}}
+{\footnotesize\ttfamily void Controller\+U\+I\+Admin\+::include\+Quiz (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao solicita ao modulo de logica de negocio o banco de disciplinas, exibe um menu para que o usuario selecione uma disciplina e um topico, no qual deseja incluir um novo quiz e recebe o nome e as perguntas para o novo quiz. Em seguida, solicita ao modulo de logica de negocio o cadastramento do novo quiz e prove feedback para o usuario. 
+
+Implements \hyperlink{class_interface_u_i_admin_a7a7964eb3ed3e6d4825d783433c9c7f1}{Interface\+U\+I\+Admin}.
+
+
+
+Definition at line 557 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_u_i_admin_abe57cd3860f99ae9ee0023bdb9ccd6b1}\label{class_controller_u_i_admin_abe57cd3860f99ae9ee0023bdb9ccd6b1}} 
+\index{Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}!include\+Student@{include\+Student}}
+\index{include\+Student@{include\+Student}!Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}}
+\subsubsection{\texorpdfstring{include\+Student()}{includeStudent()}}
+{\footnotesize\ttfamily void Controller\+U\+I\+Admin\+::include\+Student (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao permite ao usuario dar entrada nos dados de cadastro de um novo aluno, solicita ao modulo de logica de negocio que um usuario com as informacoes recebidas seja cadastrado e prove feedback do cadastramento. 
+
+Implements \hyperlink{class_interface_u_i_admin_a1fe189d6258d112e4165f69f5326752d}{Interface\+U\+I\+Admin}.
+
+
+
+Definition at line 373 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_u_i_admin_a7c31484c26788da7ea3d551bbf9f82f8}\label{class_controller_u_i_admin_a7c31484c26788da7ea3d551bbf9f82f8}} 
+\index{Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}!include\+Subject@{include\+Subject}}
+\index{include\+Subject@{include\+Subject}!Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}}
+\subsubsection{\texorpdfstring{include\+Subject()}{includeSubject()}}
+{\footnotesize\ttfamily void Controller\+U\+I\+Admin\+::include\+Subject (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao permite ao administrador dar entrada no nome de uma nova disciplina para cadastro, solicita ao modulo de lógica de negócio o cadastramento de uma nova disciplina com o nome fornecido e prove feedback ao usuario. 
+
+Implements \hyperlink{class_interface_u_i_admin_aeb5d10fa8f9633ed73e52bb61d10f40a}{Interface\+U\+I\+Admin}.
+
+
+
+Definition at line 490 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_u_i_admin_adb83b8e77cde718af7571e4d256b6b63}\label{class_controller_u_i_admin_adb83b8e77cde718af7571e4d256b6b63}} 
+\index{Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}!include\+Topic@{include\+Topic}}
+\index{include\+Topic@{include\+Topic}!Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}}
+\subsubsection{\texorpdfstring{include\+Topic()}{includeTopic()}}
+{\footnotesize\ttfamily void Controller\+U\+I\+Admin\+::include\+Topic (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao solicita ao modulo de logica de negocio o banco de disciplinas, exibe um menu para que o usuario selecione uma disciplina na qual deseja incluir um novo topico e recebe o nome para um novo topico. Em seguida, solicita ao modulo de logica de negocio o cadastramento do novo topico e prove feedback para o usuario. 
+
+Implements \hyperlink{class_interface_u_i_admin_a819252ab207a578d42807db748f867cd}{Interface\+U\+I\+Admin}.
+
+
+
+Definition at line 508 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_u_i_admin_ad77ca0f143bc938b48198d91b1be031b}\label{class_controller_u_i_admin_ad77ca0f143bc938b48198d91b1be031b}} 
+\index{Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}!manage\+Students@{manage\+Students}}
+\index{manage\+Students@{manage\+Students}!Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}}
+\subsubsection{\texorpdfstring{manage\+Students()}{manageStudents()}}
+{\footnotesize\ttfamily void Controller\+U\+I\+Admin\+::manage\+Students (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao exibe um menu para que o usuario selecione a acao desejada. Após a selecao, é chamada a funcao adequada para realizacao da acao desejada. 
+
+Implements \hyperlink{class_interface_u_i_admin_a4cfdde0e6b96ced849e26c75c7de2077}{Interface\+U\+I\+Admin}.
+
+
+
+Definition at line 348 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_u_i_admin_a1e09e8b10c0f2261e307d9e9023daaa4}\label{class_controller_u_i_admin_a1e09e8b10c0f2261e307d9e9023daaa4}} 
+\index{Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}!manage\+Subjects@{manage\+Subjects}}
+\index{manage\+Subjects@{manage\+Subjects}!Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}}
+\subsubsection{\texorpdfstring{manage\+Subjects()}{manageSubjects()}}
+{\footnotesize\ttfamily void Controller\+U\+I\+Admin\+::manage\+Subjects (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao exibe um menu para que o usuario possa solicitar uma acao relacionada ao gerenciamento de disciplinas e chama a funcao adequada para realizacao da acao solicitada. 
+
+Implements \hyperlink{class_interface_u_i_admin_ac5c6b8b3eb80b5f5d401b711da4ecc58}{Interface\+U\+I\+Admin}.
+
+
+
+Definition at line 456 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_u_i_admin_aeb774e2a137c65593cbe4c3ed22ffe64}\label{class_controller_u_i_admin_aeb774e2a137c65593cbe4c3ed22ffe64}} 
+\index{Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}!remove\+Quiz@{remove\+Quiz}}
+\index{remove\+Quiz@{remove\+Quiz}!Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}}
+\subsubsection{\texorpdfstring{remove\+Quiz()}{removeQuiz()}}
+{\footnotesize\ttfamily void Controller\+U\+I\+Admin\+::remove\+Quiz (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_interface_u_i_admin_ae092dea900f7b2bc57cbf82b665df0ce}{Interface\+U\+I\+Admin}.
+
+
+
+Definition at line 697 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_u_i_admin_a4487c7bf31acf5637e15e62af131b550}\label{class_controller_u_i_admin_a4487c7bf31acf5637e15e62af131b550}} 
+\index{Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}!remove\+Student@{remove\+Student}}
+\index{remove\+Student@{remove\+Student}!Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}}
+\subsubsection{\texorpdfstring{remove\+Student()}{removeStudent()}}
+{\footnotesize\ttfamily void Controller\+U\+I\+Admin\+::remove\+Student (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Esta funcao solicita ao modulo de logica de negocio o banco de dados de usuarios, exibe um menu para que o administrador possa selecionar um usuario para ser removido e solicita a remocao do usuario selecionado. 
+
+Implements \hyperlink{class_interface_u_i_admin_af9fdde1936eaa0bf7950c4ca98d44d74}{Interface\+U\+I\+Admin}.
+
+
+
+Definition at line 412 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_u_i_admin_a7799d896fb475d2731843c6a67db3390}\label{class_controller_u_i_admin_a7799d896fb475d2731843c6a67db3390}} 
+\index{Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}!remove\+Subject@{remove\+Subject}}
+\index{remove\+Subject@{remove\+Subject}!Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}}
+\subsubsection{\texorpdfstring{remove\+Subject()}{removeSubject()}}
+{\footnotesize\ttfamily void Controller\+U\+I\+Admin\+::remove\+Subject (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_interface_u_i_admin_a812a7f43e1daaf95525e7c8b2b11676d}{Interface\+U\+I\+Admin}.
+
+
+
+Definition at line 695 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_u_i_admin_aad9b0c9e945e3075bb8eb25b55378f27}\label{class_controller_u_i_admin_aad9b0c9e945e3075bb8eb25b55378f27}} 
+\index{Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}!remove\+Topic@{remove\+Topic}}
+\index{remove\+Topic@{remove\+Topic}!Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}}
+\subsubsection{\texorpdfstring{remove\+Topic()}{removeTopic()}}
+{\footnotesize\ttfamily void Controller\+U\+I\+Admin\+::remove\+Topic (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_interface_u_i_admin_a93530a289e1c659eaa12a8261f4d304e}{Interface\+U\+I\+Admin}.
+
+
+
+Definition at line 696 of file controllers.\+cpp.
+
+\mbox{\Hypertarget{class_controller_u_i_admin_aad33fe10f31f698f1bf0343aa5b2b7ec}\label{class_controller_u_i_admin_aad33fe10f31f698f1bf0343aa5b2b7ec}} 
+\index{Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}!set\+Downstream\+Controller@{set\+Downstream\+Controller}}
+\index{set\+Downstream\+Controller@{set\+Downstream\+Controller}!Controller\+U\+I\+Admin@{Controller\+U\+I\+Admin}}
+\subsubsection{\texorpdfstring{set\+Downstream\+Controller()}{setDownstreamController()}}
+{\footnotesize\ttfamily void Controller\+U\+I\+Admin\+::set\+Downstream\+Controller (\begin{DoxyParamCaption}\item[{\hyperlink{class_interface_b_l_admin}{Interface\+B\+L\+Admin} $\ast$}]{controller\+BL }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_interface_u_i_admin_a4c663ca0610288ba4ac5b8f772454cfc}{Interface\+U\+I\+Admin}.
+
+
+
+Definition at line 110 of file controllers.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{controllers_8hpp}{controllers.\+hpp}\item 
+\hyperlink{controllers_8cpp}{controllers.\+cpp}\end{DoxyCompactItemize}

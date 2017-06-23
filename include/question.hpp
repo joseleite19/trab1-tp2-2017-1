@@ -1,3 +1,12 @@
+/**
+*   Classe das questoes.
+*  Possui as questoes, resposta e pontuacao, vai mostrando as questoes.
+*   @author joseleite19
+*   @since 07/05/2017
+*   @version 3.0
+*/
+
+
 #ifndef QUESTION
 #define QUESTION
 

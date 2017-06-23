@@ -1,3 +1,12 @@
+/**
+*   Modulo dos controladores.
+*   Controlador de cada modulo da interface, controlador possui as funcoes de cada modulo.
+*   @author cftpontes
+*   @since 09/05/2017
+*   @version 3.0
+*/
+
+
 #ifndef CONTROLLERS_H
 #define CONTROLLERS_H
 
@@ -117,7 +126,7 @@ public:
     void removeSubject(Subject *);
     void removeTopic(Topic *, Subject *);
     void removeQuiz(Quiz *, Topic *, Subject *);
- 
+
     inline void setDownstreamController(StubPR * controllerPR) { this->controllerPR = controllerPR; }
     ControllerBLAdmin();
     ~ControllerBLAdmin();

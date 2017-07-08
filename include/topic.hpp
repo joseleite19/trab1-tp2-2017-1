@@ -42,7 +42,7 @@ public:
     *   @see quiz.run()
     *   @return vazio.
     */
-    void showQuizzes(int user_id) const;
+    void showQuizzes(int user_id);
 
     const std::vector<Quiz>& getQuizes() const;
 };

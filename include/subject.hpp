@@ -29,7 +29,7 @@ public:
     */
     void addTopic(Topic);
 
-    void showTopics(int user_id) const;
+    void showTopics(int user_id);
     const std::vector<Topic>& getTopics() const;
 
     Subject(const std::string &);

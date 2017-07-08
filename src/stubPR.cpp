@@ -11,6 +11,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <iostream>
 
 StubPR::StubPR() {
 	loadSubjects();
@@ -134,6 +135,22 @@ void StubPR::loadSubjects(string fileName){
 						delete question;
 
 					}
+                    //ler arquivo
+
+                    ifstream fpts("data/pts/"+quiz->getname());
+                    
+                    if(fpts.is_open()){
+                        int x, y;
+                        while(fpts >> x >> y){
+                            quiz->insert_pontuacao(x, y);
+                            std::cout << x << y;
+                        }
+                        std::cout << "asdsda" << std::endl;
+
+                        fpts.close();
+                    }
+
+                    std::cout << "data/pts/"+quiz->getname() << std::endl;
 					topic->addQuiz(*quiz);
 					delete quiz;
 				}
@@ -177,6 +194,14 @@ void StubPR::saveSubjects(string fileName){
 					file << (int)question.getresp() << "\\";
 					file << std::endl;
 				}
+
+                ofstream arqpts("data/pts/"+quiz.getname());
+                if(!arqpts.is_open()) continue;
+                for(const pair<int, int>& pt: quiz.getPontuacoes()){
+                    arqpts << pt.first << " " << pt.second << endl;
+                }
+
+                arqpts.close();
 			}
 		}
 	}

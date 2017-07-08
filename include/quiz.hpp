@@ -12,11 +12,14 @@
 
 #include <string>
 #include <vector>
+#include <set>
+#include <utility>
 #include "question.hpp"
 
 class Quiz{
 	std::string name;
 	std::vector<Question> questions;
+    std::multiset<std::pair<int, int>> pontuacoes;
 public:
     /**
     *   Construtor.
@@ -29,6 +32,9 @@ public:
 	std::string setname(std::string);
     void addQuestion(Question);
 
+    void insert_pontuacao(int, int);
+    const std::multiset<std::pair<int, int>>& getPontuacoes() const;
+
     /**
     *   Ira mostrar as perguntas e ler as respostas do usuario.
     *   Será verificado se a resposta esta conforme esperado (V ou F) e sera atribuido a pontuacao apos a solucao das questoes.
@@ -38,7 +44,7 @@ public:
     *   @see questions.show()
     *   @return retorna nada.
     */
-	void run(int user_id) const;
+	void run(int user_id);
 
     const std::vector<Question>& getQuestions() const;
 };

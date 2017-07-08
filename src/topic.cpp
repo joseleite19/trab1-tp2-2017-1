@@ -37,7 +37,7 @@ void Topic::addQuiz(Quiz quiz) {
 *   @see    quiz.run()
 *   @return vazio.
 */
-void Topic::showQuizzes(int user_id) const {
+void Topic::showQuizzes(int user_id){
     std::vector<int> id = randompermutation(quizzes.size());
 
     for(int i:id)quizzes[i].run(user_id);

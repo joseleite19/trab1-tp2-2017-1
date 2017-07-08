@@ -31,7 +31,7 @@ void Subject::addTopic(Topic topic) {
     this->topics.push_back(topic);
 }
 
-void Subject::showTopics(int user_id) const{
+void Subject::showTopics(int user_id){
     std::vector<int> id = randompermutation(topics.size());
 
 	for(int i:id)topics[i].showQuizzes(user_id);
